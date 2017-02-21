@@ -1,0 +1,29 @@
+{% extends 'layout_accueil.html.twig' %}
+
+
+{% block content %}
+
+<section id="home">
+    <img src="{{ asset("img/logo.svg") }}" alt="logo" >
+        <h1 class="home">Audrey Serin</h1>
+        <h1 class="home">Intégrateur Développeur Web</h1>
+        
+    <article class="anim">    
+        <p>Je suis Audrey.</p>
+        <p>Je suis passionnée par les nouvelles technologies. Suite à un tournant dans ma vie professionnelle, j'ai pu réalisé mes rêves et me tourner vers un métier créatif.</p> 
+        <p>J'ai donc suivi une formation intensive de 3 mois à la 3W Accademy pour devenir développeur web. Dans la foulée, j'ai continué avec une formation d'un mois sur Symfony 3 et sur une initiation d'une semaine à Photoshop.
+        </p>
+        <p>
+            Mes prestations: 
+        <ul>
+            <li><span>Création et Intégraion de site vitrine :</span> Html5, Css3, Javascript/ Jquery, Wordpress, le tout en responsive (adapté pour les tablettes et smartphones).</li>
+            <li><span>Développement sur mesure</span> avec Symfony.</li>
+            <li><span>E-commerce</span> avec Prestashop</li>
+        </ul>
+        </p>
+        <p>Vous êtes à la recherche d'une prestation web? <a href="{{ path("contact")}}">Contactez-moi !</a></p>
+        
+    </article>
+</section>
+    
+{% endblock %}

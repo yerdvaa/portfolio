@@ -1,0 +1,347 @@
+/***********LAYOUT.HTML.TWIG***********/
+/******************et******************/
+/*******LAYOUT_ACCUEIL.HTML.TWIG*******/
+
+/*body et container*/
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: 'Scope One', serif;
+    min-height: 100%;
+    position: relative;
+    color: #28287a;
+    background: url(../img/art.jpg);
+    background-size: cover;
+}
+
+.container {
+	max-width: 1100px;
+	width: 80%;
+	margin: 0 auto;
+	font-size: 1.1rem;
+}
+
+header, main {
+  background-color: rgba(255, 73, 163);
+}
+
+/*header*/
+header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C1236;
+}
+
+nav a{
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #FF49A3;
+  font-size: 1.1rem;
+}
+
+nav a .fa{
+  display: block;
+  text-align: center;
+}
+
+/*titres et liens*/
+h1{
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2rem;
+  color: #FFAB68;
+}
+
+a {
+  text-decoration: none;
+  color: #FF49A3;
+}
+/*SVG*/
+.svgHaut {
+  padding: 30px 0 20px;
+}
+
+.svgBas {
+  padding: 30px 0 70px;
+}
+
+.svgBas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*footer*/
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #3C1236;
+}
+
+footer section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  color: #FF49A3;
+}
+
+/***********INDEX.HTML.TWIG***********/
+#home {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 80px;
+}
+
+#home h1{
+  font-size: 4rem;
+}
+
+#home article{
+  width : 50%;
+  padding: 30px 30px 15px;
+  font-family: 'Fredericka the Great', cursive;
+  background-color: rgba(60,18,54,0.8);
+  font-size: 1.3rem;
+}
+
+#home li {
+    list-style-type: none;
+    color: #FF49A3;
+}
+
+#home article p {
+    padding-bottom: 15px;
+}
+
+#home article p:nth-child(even){
+    color: #FF49A3;
+}
+
+#home article p:nth-child(odd), span {
+    color: #FFAB68;
+}
+
+/***********COMPETENCES.HTML.TWIG***********/
+.competences {
+    padding-top: 4%;
+}
+/*titres*/
+h2 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 1.5rem;
+    color: #28287a;
+    padding: 20px;
+    text-align: center;
+}
+
+h3 {
+    padding-top: 20px;
+}
+
+/*images*/
+section div img
+{
+    width: 100px;
+    height: auto;
+    margin: auto;
+}
+
+
+/* ---- grid ---- */
+.grid {
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 200px;
+  height: 160px;
+  float: left;
+  margin-bottom: 20px;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.grid-item--width2 {
+    width: 400px;
+    height: 170px;
+}
+
+.grid-item--height {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item--gigante {
+  width: 320px;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item:hover {
+  background: #10E1EA;
+  cursor: pointer;
+  border: 3px double #333;
+}
+
+.grid-item:hover h3 {
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/***********CONTACT.HTML.TWIG***********/
+.contacter {
+    text-align: center;
+    padding: 30px;
+    color: #FFAB68;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 1.2rem;
+}
+
+.contacter strong {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 1.9rem;
+    color: #3c1236;
+}
+
+#contact {
+    display: flex;
+    padding-top: 1%;
+}
+
+#contact h1 {
+    padding: 200px 40px;
+    font-size: 4rem;
+    -webkit-transform:rotate(-40deg);
+    -moz-transform:rotate(-40deg);
+    -o-transform:rotate(-40deg);
+    -ms-transform:rotate(-40deg);  
+    transform:  rotate(-40deg);       
+}
+
+#contact article {
+    width: 600px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 600px;
+    /*padding: 50px;*/
+    border: 1px solid rgba(0,0,0,.2);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: rgba(0, 0, 0, 0.5); 
+    -moz-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    box-shadow: 0 0 13px 3px rgba(0,0,0,.5);
+    overflow: hidden; 
+}
+
+.textarea{
+	  background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 16px; 
+    width: 440px;
+    height: 110px;
+    border: 1px solid rgba(255,255,255,.6);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:45px;
+    padding-right:20px;
+    padding-top:12px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+
+.contact {
+    width: 440px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,.4);
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; 
+    display:block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    color:#fff;
+    padding-left:20px;
+    padding-right:20px;
+    margin-bottom:20px;
+}
+
+.name {
+    background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 16px; 
+    padding-left:45px;
+}
+
+.mail {
+    background: rgba(255, 255, 255, 0.4) no-repeat scroll 16px 20px;
+    padding-left:45px;
+}
+
+.send {
+    cursor:pointer;
+    background-color: #563661;
+    color: #D48A3D;
+}
+.send:hover {
+    background-color: #A4C5B5;
+    color: #2E142F;
+}
+
+#contact .form div ul li {
+    color: #FFF;
+    font-size: 0.75rem;
+}

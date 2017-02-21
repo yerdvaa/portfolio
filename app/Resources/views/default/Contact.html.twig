@@ -1,0 +1,85 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+ 
+    <section class="contacter">
+        <strong>
+            {% for flash_message in app.session.flashBag.get('success') %}
+                <div>
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+        </strong>
+        
+        
+        
+        
+    </section>    
+
+<section id="contact">
+    <article>
+        <h1>Contactez-moi</h1>
+    </article>
+    
+    <article class="form">
+        <div class="contacter">
+            <p>Besoin de plus d'informations ? Une demande de devis ?
+N'hésitez à me contacter via le formulaire ci-dessous : </p>
+        </div>
+        
+        {{ form_start(formContact, {attr:{ novalidate:"novalidate"}} )}}
+        
+
+        <div>
+            {{ form_errors(formContact.firstname, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.firstname, {attr: {placeholder: "Votre prénom", class: "contact name"} } ) }}
+        </div>
+
+        <div>
+            {{ form_errors(formContact.lastname, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.lastname, {attr: {placeholder: "Votre nom", class: "contact name"} } ) }}
+        </div>
+
+        <div>
+            {{ form_errors(formContact.phone) }}
+            {{ form_widget(formContact.phone, {attr: {placeholder: "Votre numéro de téléphone", class: "contact mail"} } ) }}
+        </div>
+        
+        <div>
+            {{ form_errors(formContact.email, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.email,
+            {
+                attr: {
+                placeholder: 'email',
+                class: "contact mail",
+                id: "votre-super-id"
+                }
+            })
+            }}
+        </div>
+
+        <div>
+            {{ form_errors(formContact.content, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.content, {attr: {placeholder: "Votre message", class: "textarea"} }) }}
+        </div>
+
+            
+                <button class="contact send" type="submit">Envoyer</button>
+            
+            {{ form_end(formContact) }}
+    </article>        
+            
+    <article>
+                {# Affichage du message de success	#}
+        <strong>
+            {% for flash_message in app.session.flashBag.get('success') %}
+                <div class="alert alert-info">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+        </strong>
+    </article>
+
+</section>
+            
+{% endblock %}    
