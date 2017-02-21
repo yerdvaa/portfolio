@@ -98,7 +98,7 @@ footer section {
   color: #FF49A3;
 }
 
-/***********INDEX.HTML.TWIG***********/
+/***********A PROPOS***********/
 #home {
   text-align: center;
   display: flex;
@@ -137,7 +137,7 @@ footer section {
     color: #FFAB68;
 }
 
-/***********COMPETENCES.HTML.TWIG***********/
+/***********COMPETENCES***********/
 .competences {
     padding-top: 4%;
 }
@@ -221,8 +221,22 @@ section div img
     font-size: 2rem;
     font-weight: bold;
 }
+/***********REALISATIONS***********/
+#realisations {
+    background: url(../img/realisations/code_fond.jpg);
+    background-size: cover;
+    padding: 140px 200px 40px;
+    display: flex;
+    justify-content: flex-end;
+}
 
-/***********CONTACT.HTML.TWIG***********/
+#realisations .anim {
+    width: 800px;
+    height: 400px;
+    border: 3px solid white;
+}
+
+/***********CONTACT***********/
 .contacter {
     text-align: center;
     padding: 30px;

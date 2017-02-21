@@ -50,6 +50,6 @@ class ContactController extends Controller
                 return $this->redirectToRoute('contact');
             }
         
-        return $this->render('default/Contact.html.twig', ["formContact" => $formContact->createView()]);
+        return $this->render('default/index.html.twig', ["formContact" => $formContact->createView()]);
     }
 }

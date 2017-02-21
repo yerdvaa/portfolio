@@ -25,5 +25,145 @@
         
     </article>
 </section>
+        
+<section id ="competences" class="container">
+   
+    <article class="competences">
+            <h2>Langages et Frameworks connus</h2>
+
+        <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 160 }'>
+            
+            <div class="grid-item">
+           
+                <img src="{{ asset("img/logos_languages/HTML5.png") }}" alt="logo de HTML5"/>
+            </div>
+            
+            <div class="grid-item grid-item--width2">
+                
+                <img src="{{ asset("img/logos_languages/php.png") }}" alt="logo de PHP"/>
+            </div>
+            
+            <div class="grid-item">
+                
+                <img src="{{ asset("img/logos_languages/css3.png") }}" alt="logo de CSS3"/>
+            </div>
+            
+            <div class="grid-item">
+                
+                <img src="{{ asset("img/logos_languages/mySQL.png") }}" alt="logo de MySQL"/>
+            </div>
+
+            <div class="grid-item grid-item--width2">
+                
+                <img src="{{ asset("img/logos_languages/javascript.png") }}" alt="logo de Javascript"/>
+            </div>
+
+            <div class="grid-item">
+                <img src="{{ asset("img/logos_languages/wordpress.png") }}" alt="logo de Wordpress"/>
+                
+            </div>
+            
+            
+
+            <div class="grid-item grid-item--width2">
+                <img src="{{ asset("img/logos_languages/symfony.png") }}" alt="logo de Symfony"/>                
+            </div>
+
+            <div class="grid-item">
+                
+                <img src="{{ asset("img/logos_languages/materialize.png") }}" alt="logo de Materialize CSS"/>
+            </div>
+
+            <div class="grid-item">
+                
+                <img src="{{ asset("img/logos_languages/bootstrap.png") }}" alt="logo de Bootstrap"/>
+            </div>
+        </div>
+    </article>
+</section>
+
+<section>
+        <h2>Réalisations</h2>
+        <article id="realisations">
+            <div class="anim">    
+                    <img src="{{ asset("") }}" alt="">
+            </div>
+        </article>     
+        
+</section>
+            
+            
+<section id="contacter">
+            <strong>
+
+            {% for flash_message in app.session.flashBag.get('success') %}
+                <div>
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+        </strong>
+        
+<section id="contact">
+    <article>
+        <h1>Contactez-moi</h1>
+    </article>
     
+    <article class="form">
+        <div class="contacter">
+            <p>Besoin de plus d'informations ? Une demande de devis ?
+N'hésitez à me contacter via le formulaire ci-dessous : </p>
+        </div>
+        
+        {{ form_start(formContact, {attr:{ novalidate:"novalidate"}} )}}
+        
+
+        <div>
+            {{ form_errors(formContact.firstname, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.firstname, {attr: {placeholder: "Votre prénom", class: "contact name"} } ) }}
+        </div>
+
+        <div>
+            {{ form_errors(formContact.lastname, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.lastname, {attr: {placeholder: "Votre nom", class: "contact name"} } ) }}
+        </div>
+
+        <div>
+            {{ form_errors(formContact.phone) }}
+            {{ form_widget(formContact.phone, {attr: {placeholder: "Votre numéro de téléphone", class: "contact mail"} } ) }}
+        </div>
+        
+        <div>
+            {{ form_errors(formContact.email, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.email,
+            {
+                attr: {
+                placeholder: 'email',
+                class: "contact mail",
+                id: "votre-super-id"
+                }
+            })
+            }}
+        </div>
+
+        <div>
+            {{ form_errors(formContact.content, {attr: {class: "error"} } ) }}
+            {{ form_widget(formContact.content, {attr: {placeholder: "Votre message", class: "textarea"} }) }}
+        </div>
+
+            
+                <button class="contact send" type="submit">Envoyer</button>
+            
+            {{ form_end(formContact) }}
+    </article>        
+
+ </section>
+</section>                
+
 {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <!-- or -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+{% endblock %} 
