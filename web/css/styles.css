@@ -155,7 +155,7 @@ h3 {
 }
 
 /*images*/
-section div img
+#competences div img
 {
     width: 100px;
     height: auto;
@@ -222,19 +222,36 @@ section div img
     font-weight: bold;
 }
 /***********REALISATIONS***********/
-#realisations {
+.realisations {
     background: url(../img/realisations/code_fond.jpg);
     background-size: cover;
     padding: 140px 200px 40px;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-#realisations .anim {
-    width: 800px;
-    height: 400px;
-    border: 3px solid white;
+.realisations .animLego {
+    width: 600px;
+    height: 500px;
 }
+
+.realisations .animLego img {
+    width: 500px;
+    height: auto;
+}
+.realisations button {
+    text-align: center;
+    background-color: #F2D201;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.realisations button:hover {
+    background-color: #EE6D74;
+}
+
 
 /***********CONTACT***********/
 .contacter {

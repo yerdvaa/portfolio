@@ -5,16 +5,14 @@
 //Pour la partie réalisation
 var img =
         [
+            {image:'img/realisations/grue_affiche.png'},
             {image:'img/realisations/group.png'},
             {image:'img/realisations/grue1.png'},
             {image:'img/realisations/grue_finale.png'},
             {image:'img/realisations/grue_affiche.png'}
         ];
 
-var imgAnim = document.querySelector('.anim');
-var timer = null;
-var statutImg = {};
-statutImg.index = 0;
+var statut;
 
 /*************************************************************/
 /***********************FONCTIONS*****************************/
@@ -34,36 +32,42 @@ function actualize()
 }
 
 //fonction pour les réalisations avec les legos
-function initializeAnimLego()
+function refreshAnimLego()
 {
-    imgAnim.setAttribute('src', img[0].image);
+    var imgAnim = document.querySelector('.animLego img');
+    
+    imgAnim.src = '/Mon_Portfolio/web/' + img[statut.index].image;
 }
 
 function showImgLego()
 {
-    imgAnim.setAttribute('src', img[statutImg.index].image );
+    statut.index++;
+    
+    /*if (statut.index == img.length)
+    {
+        statut.index = 0;
+    }*/
+     
+    refreshAnimLego();
+    
 }
 
 function playAnimLego()
 {
-    for (var index = 0; index < img.length; index ++)
-        {
-          setTimeout(showImgLego, 2000); 
-            
-        }  
+    if (statut.timer == null)
+    {
+          statut.timer = setInterval(showImgLego, 3000);
+          
+    }
+    
+    /*else if (statut.index == img.length)
+    {
+	clearInterval(statut.timer);	
+	statut.timer = null;
+        
+    }*/
 }
 
-/*function lancementAnimLego()
-{
-    if (timer == null)
-    {
-        timer = setInterval(playAnimLego , 2000);
-    }
-    else {
-        clearInetrval(timer);
-        timer == null;
-    }
-}*/
 
 /*************************************************************/
 /*********************CODE PRINCIPAL**************************/
@@ -98,8 +102,15 @@ $(function ()
     });
     
     // Anim réalisation
-    initializeAnimLego();
-    playAnimLego();
-    console.log('toto');
-
+        // Initialisation de l'anim
+    statut = {};
+    statut.index = 0;
+    statut.timer = null;
+    
+        // Installation gestionnaires d'évènement
+    $('button').on('click', playAnimLego);
+    
+        // Affichage initial
+    refreshAnimLego();
+   
 });
