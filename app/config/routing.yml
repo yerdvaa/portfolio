@@ -2,5 +2,4 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
-    prefix: /accueil
-    
+    prefix: /home    

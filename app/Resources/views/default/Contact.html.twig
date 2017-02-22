@@ -2,8 +2,9 @@
 
 {% block content %}
  
-    <section class="contacter">
-        <strong>
+   <section id="contacter">
+            <strong>
+
             {% for flash_message in app.session.flashBag.get('success') %}
                 <div>
                     {{ flash_message }}
@@ -11,11 +12,6 @@
             {% endfor %}
         </strong>
         
-        
-        
-        
-    </section>    
-
 <section id="contact">
     <article>
         <h1>Contactez-moi</h1>
@@ -68,18 +64,9 @@ N'hésitez à me contacter via le formulaire ci-dessous : </p>
             
             {{ form_end(formContact) }}
     </article>        
-            
-    <article>
-                {# Affichage du message de success	#}
-        <strong>
-            {% for flash_message in app.session.flashBag.get('success') %}
-                <div class="alert alert-info">
-                    {{ flash_message }}
-                </div>
-            {% endfor %}
-        </strong>
-    </article>
 
-</section>
+ </section>
+</section>                
+
             
 {% endblock %}    
