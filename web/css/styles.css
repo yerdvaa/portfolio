@@ -18,10 +18,12 @@ body {
     min-height: 100%;
     position: relative;
     color: #28287a;
-    background: url(../img/art.jpg);
-    background-size: cover;
 }
 
+#slide, #slide1 {
+    background: url(../img/art.jpg) center 0 no-repeat fixed ;
+    background-size: cover;
+}
 .container {
 	max-width: 1100px;
 	width: 80%;
@@ -35,11 +37,14 @@ header, main {
 
 /*header*/
 header {
+    background-color: #3C1236;
+}
+
+header div {
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3C1236;
 }
 
 nav a{
@@ -60,6 +65,13 @@ h1{
   font-family: 'Fredericka the Great', cursive;
   font-size: 2rem;
   color: #FFAB68;
+}
+
+
+h2 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 a {
@@ -105,7 +117,7 @@ footer section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 0 80px;
+  padding: 0 0 80px;
 }
 
 #home h1{
@@ -118,6 +130,7 @@ footer section {
   font-family: 'Fredericka the Great', cursive;
   background-color: rgba(60,18,54,0.8);
   font-size: 1.3rem;
+  margin: auto;
 }
 
 #home li {
@@ -136,96 +149,27 @@ footer section {
 #home article p:nth-child(odd), span {
     color: #FFAB68;
 }
-
+.slide_inside {
+    padding-bottom: 50px;
+}
 /***********COMPETENCES***********/
 .competences {
-    padding-top: 4%;
-}
-/*titres*/
-h2 {
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 1.5rem;
-    color: #28287a;
-    padding: 20px;
-    text-align: center;
+    padding-bottom: 80px;
 }
 
-h3 {
-    padding-top: 20px;
-}
-
-/*images*/
-#competences div img
-{
-    width: 100px;
-    height: auto;
-    margin: auto;
-}
-
-
-/* ---- grid ---- */
-.grid {
-    width: 85%;
-    margin: 0 auto;
-    padding-bottom: 100px;
-}
-
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-/* ---- grid-item ---- */
-
-.grid-item {
-  width: 200px;
-  height: 160px;
-  float: left;
-  margin-bottom: 20px;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.grid-item--width2 {
-    width: 400px;
-    height: 170px;
-}
-
-.grid-item--height {
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-}
-
-.grid-item--gigante {
-  width: 320px;
-  height: 310px;
-  display: flex;
-  flex-direction: column;
-}
-
-.grid-item:hover {
-  background: #10E1EA;
-  cursor: pointer;
-  border: 3px double #333;
-}
-
-.grid-item:hover h3 {
-    color: #FFFFFF;
-    font-size: 2rem;
-    font-weight: bold;
-}
 /***********REALISATIONS***********/
+#realisations {
+    padding-bottom: 80px;
+}
+
+#realisations h2 {
+    padding-bottom: 50px;
+}
+
 .realisations {
     background: url(../img/realisations/code_fond.jpg);
     background-size: cover;
-    padding: 140px 200px 40px;
+    padding: 140px 60px 40px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -270,7 +214,7 @@ h3 {
 
 #contact {
     display: flex;
-    padding-top: 1%;
+    padding: 80px 0 80px;
 }
 
 #contact h1 {

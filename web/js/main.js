@@ -80,10 +80,16 @@ $(function ()
     $('.home').textillate({in: {effect: 'rollIn'}});
     $('.anim').delay(6000).animate({"opacity": 1}, 300);
     $('.home').delay(6000).fadeOut('slow');
+    
 
     // bande sous la nav
     setInterval(actualize, 3000);
 
+    // Effet parallax
+    $('#slide').parallax('center', 0, 2, true);
+    $('#slide').parallax('center', 2900, 2, true);
+
+/*  
     //Compétences avec pluggin masonry
     var $grid = $('.grid').masonry({
         itemSelector: '.grid-item',
@@ -100,7 +106,9 @@ $(function ()
         // trigger layout
         $('.grid').masonry();
     });
-    
+    */
+   
+   
     // Anim réalisation
         // Initialisation de l'anim
     statut = {};

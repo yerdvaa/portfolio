@@ -50,7 +50,7 @@
 			<a href="{{ asset("https://www.linkedin.com/in/audrey-serin-0367bba2/") }}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
 			<a href="#">CV</a>
 				
-			<p><i class="fa fa-mobile" aria-hidden="true"></i> <?=htmlspecialchars($profil['tel']); ?></p>
+			<a href="{{ asset("https://github.com/yerdvaa") }}"><i class="fa fa-github" aria-hidden="true"></i></a>
 			<a href="#contacter"<i class="fa fa-envelope" aria-hidden="true"></i> </a>
 				
 		</section>
@@ -69,11 +69,9 @@
 		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 		  crossorigin="anonymous"></script>
 		  
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-	<script src="{{ asset("js/masonry/masonry.pkgd.min.js") }}"></script>
-	<script src="{{ asset("js/masonry/masonry.js") }}"></script>
 	<script src="{{ asset("js/jquery.lettering.js") }}"></script>
 	<script src="{{ asset("js/jquery.textillate.js") }}"></script>
+        <script src="{{ asset("js/jquery.parallax.js") }}"></script>
         
         <script src="{{ asset("js/main.js")}}"></script>
     {% endblock %}

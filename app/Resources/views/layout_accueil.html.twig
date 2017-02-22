@@ -19,10 +19,9 @@
 
 </head>
 <body>
-	<header class="anim">
-            <a href="#home"><img src="{{ asset("img/logo.svg") }}" alt="logo">
-			<!--<h1>Audrey Serin<br>
-			Intégrateur Développeur Web</h1>--></a>
+	<header>
+            <div class="anim">
+                <a href="#home"><img src="{{ asset("img/logo.svg") }}" alt="logo"></a>
 		
 		<nav>
 			<a href="#home">Accueil</a>
@@ -30,26 +29,22 @@
 			<a href="#realisations">Portfolio</a>
 			<a href="#contacter">Contact</a>
 		</nav>
-		
+            </div>
 	</header>
 	<main>
-		<div class="svgHaut">
-			<svg width="100%" height="60"></svg>
-		</div>
+		
             
             {% block content %} {% endblock %}
             
             
-		<!-- <div class="svgBas">
-			<svg width="100%" height="60" class="svg1"></svg>
-		</div> -->
+		
 	</main>
 	<footer class="anim">
 		<section class="container">
 			<a href="{{ asset("https://www.linkedin.com/in/audrey-serin-0367bba2/") }}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
 			<a href="#">CV</a>
 		
-			<p><i class="fa fa-mobile" aria-hidden="true"></i> </p>
+			<a href="{{ asset("https://github.com/yerdvaa") }}"><i class="fa fa-github" aria-hidden="true"></i></a>
 			<a href="#contacter"<i class="fa fa-envelope" aria-hidden="true"></i></a>
 
 		</section>
@@ -68,11 +63,9 @@
 		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 		  crossorigin="anonymous"></script>
 		  
-	<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-	<script src="{{ asset("js/masonry/masonry.pkgd.min.js") }}"></script>
-	<script src="{{ asset("js/masonry/masonry.js") }}"></script>
 	<script src="{{ asset("js/jquery.lettering.js") }}"></script>
 	<script src="{{ asset("js/jquery.textillate.js") }}"></script>
+        <script src="{{ asset("js/jquery.parallax.js") }}"></script>
         
         <script src="{{ asset("js/main.js")}}"></script>
     {% endblock %}
