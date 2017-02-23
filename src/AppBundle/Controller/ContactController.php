@@ -47,9 +47,12 @@ class ContactController extends Controller
                 $this->addFlash('success', 'Votre email a bien été envoyé');
 
                 // Redirection vers la route contact
-                return $this->redirectToRoute('home');
+            return $this->redirectToRoute('home', ['_fragment' => 'contacter']);
             }
         
         return $this->render('default/index.html.twig', ["formContact" => $formContact->createView()]);
     }
 }
+
+
+

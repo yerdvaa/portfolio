@@ -198,7 +198,7 @@ footer section {
 
 
 /***********CONTACT***********/
-.contacter {
+#contacter {
     text-align: center;
     padding: 30px;
     color: #FFAB68;
@@ -206,7 +206,8 @@ footer section {
     font-size: 1.2rem;
 }
 
-.contacter strong {
+#contacter strong {
+    text-align: center;
     font-family: 'Fredericka the Great', cursive;
     font-size: 1.9rem;
     color: #3c1236;
