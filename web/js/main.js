@@ -14,6 +14,7 @@ var img =
 
 var statut;
 
+
 /*************************************************************/
 /***********************FONCTIONS*****************************/
 /*************************************************************/
@@ -31,6 +32,34 @@ function actualize()
     masterPiece.draw('.svg1');
 }
 
+
+// function pour le gestionnaire d'évènement au scroll
+function verifSiEnVue()
+{
+    var $anim_element = $('.animLego');
+    var window_height = $(window).height();
+    var window_topPosition = $(window).scrollTop();
+    var window_bottomPosition = (window_height + window_topPosition);
+    
+    $.each($anim_element, function()
+    {
+        var $element =  $(this);
+        var element_height = $element.outerHeight();
+        var element_topPosition = $element.offset().top;
+        var element_bottomPosition = (element_height + element_topPosition);
+       
+        // Vérification de la vue, si à l'écran ou pas
+        if ((element_bottomPosition >= window_topPosition) && (element_topPosition <= window_bottomPosition))
+        {
+            $element.addClass('inView');
+        }
+        else
+        {
+            $element.removeClass('inView');
+        }
+    });
+}
+
 //fonction pour les réalisations avec les legos
 function refreshAnimLego()
 {
@@ -42,31 +71,24 @@ function refreshAnimLego()
 function showImgLego()
 {
     statut.index++;
-    
-    /*if (statut.index == img.length)
-    {
-        statut.index = 0;
-    }*/
-     
     refreshAnimLego();
     
+    if (statut.index >= 4)
+    {
+        statut.index = -1;
+        statut.index++;
+    }
+
 }
 
-function playAnimLego()
+function onScrollPlayAnimLego()
 {
-    if (statut.timer == null)
+    if ($('.animLego').is('.inView'))
     {
-          statut.timer = setInterval(showImgLego, 3000);
-          
+       setInterval(showImgLego, 3000);
     }
-    
-    /*else if (statut.index == img.length)
-    {
-	clearInterval(statut.timer);	
-	statut.timer = null;
-        
-    }*/
 }
+
 
 
 /*************************************************************/
@@ -89,34 +111,21 @@ $(function ()
     $('#slide').parallax('center', 0, 2, true);
     $('#slide').parallax('center', 2900, 2, true);
 
-/*  
-    //Compétences avec pluggin masonry
-    var $grid = $('.grid').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: 100,
-        gutter: 10,
-        stagger: 10,
-        resize: true,
-        transitionDuration: '0.8s'
-    });
-
-    $('.grid').on('click', '.grid-item', function () {
-        // change size of item via class
-        $(this).toggleClass('grid-item--gigante');
-        // trigger layout
-        $('.grid').masonry();
-    });
-    */
-   
-   
-    // Anim réalisation
+    
+    // Anim réalisation au scroll et lancement au clic
+    
         // Initialisation de l'anim
     statut = {};
     statut.index = 0;
     statut.timer = null;
     
-        // Installation gestionnaires d'évènement
-    $('button').on('click', playAnimLego);
+        // Installation gestionnaire d'évènement au scroll et au clic
+    $(window).on('scroll resize', verifSiEnVue);
+
+    $(window).trigger('scroll');
+    
+        // Lancement de l'animation
+    onScrollPlayAnimLego();
     
         // Affichage initial
     refreshAnimLego();
