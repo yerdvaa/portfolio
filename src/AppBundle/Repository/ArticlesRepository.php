@@ -10,22 +10,32 @@ namespace AppBundle\Repository;
  */
 class ArticlesRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function randChoiceArticles()
+    
+    public function countId()
     {
-        $query = $this->getEntityManager()
-                ->createQuery('
-                    SELECT id
-                    FROM AppBundle:Articles articles
-                    JOIN
-                        (
-                        SELECT FLOOR( COUNT(*) * RAND() ) AS ValeurAleatoire
-                        FROM articles
-                        ) AS V ON articles.ID = V.ValeurAleatoire
-                ');
-               
-        die(dump($query->getResult()));
-               
+        $query = $this->getEntityManager()->createQueryBuilder()
+                ->select('articles')
+                ->from('AppBundle:Articles', 'articles')
+                ->getQuery();
         
+        return count($query->getResult());
+                
+    }
+    public function randChoiceArticles()
+    {       
+        $countID = $this->countId();
+        $randID = rand(1, $countID);
+        $randID .= ','.rand(1, $countID). ','.rand(1, $countID);
         
+        $query = $this->getEntityManager()->createQueryBuilder()
+                ->select('a')
+                ->from('AppBundle:Articles', 'a');
+        
+        $query->add('where', $query->expr()->in('a.id', $randID));
+                
+        $result = $query->getQuery()->getResult();
+       
+          
+        return $result;
     }
 }

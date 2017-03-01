@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: mysql.yml }
 
 
    
@@ -73,4 +74,3 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
     port:      "%mailer_port%"
-    sender_address: "%mailer_admin%"

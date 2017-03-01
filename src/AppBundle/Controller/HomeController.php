@@ -52,10 +52,11 @@ class HomeController extends Controller
             }
             
             
-              $em = $this->getDoctrine()->getManager();
-        $articles = $em->getRepository("AppBundle:Articles")
-                ->findAll();
-        
+                $em = $this->getDoctrine()->getManager();
+                $articles = $em->getRepository("AppBundle:Articles")
+                    ->randChoiceArticles();
+                
+                
         //die(dump($articles));
         
         return $this->render('default/index.html.twig', [

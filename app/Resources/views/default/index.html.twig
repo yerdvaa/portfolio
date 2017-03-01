@@ -61,8 +61,10 @@
             <p>Une sélection des articles que j'ai trouvé super intéressants sur le thème du code (ou pas!)</p>
             <p>Vous avez une préférence sur le thème? Vous pouvez sélectionner celui qui vous plaît le plus.</p>
         
-        <div>   
+        <div>  
+            
             {% for article in articles %}
+                
                 <article>
                     <h3>{{ article.titre }}</h3>
                         {% for category in article.categorie %}    

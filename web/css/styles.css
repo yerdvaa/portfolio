@@ -31,6 +31,7 @@ body {
     font-size: 1.1rem;
 }
 
+
 header, main {
     background-color: rgba(255, 73, 163);
 }
@@ -193,7 +194,19 @@ footer section {
 
 #articles div {
     display: flex;
-    justify-content: raw;
+    justify-content: space-around;
+}
+
+#articles div article {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+    width: 500px;
+}
+
+#articles div article img {
+    width: 400px;
+    heigth: auto;
 }
 
 /***********CONTACT***********/
