@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/Mon_Portfolio/src/AppBundle/Controller/DefaultController.php</file>
-            <file>file:/C:/wamp64/www/Mon_Portfolio/web/js/main.js</file>
+            <file>file:/C:/wamp64/www/Mon_Portfolio/src/AppBundle/Entity/Articles.php</file>
+            <file>file:/C:/wamp64/www/Mon_Portfolio/src/AppBundle/Repository/ArticlesRepository.php</file>
             <file>file:/C:/wamp64/www/Mon_Portfolio/web/css/styles.css</file>
             <file>file:/C:/wamp64/www/Mon_Portfolio/app/Resources/views/default/index.html.twig</file>
-            <file>file:/C:/wamp64/www/Mon_Portfolio/src/AppBundle/Controller/ContactController.php</file>
+            <file>file:/C:/wamp64/www/Mon_Portfolio/src/AppBundle/Controller/HomeController.php</file>
         </group>
     </open-files>
 </project-private>

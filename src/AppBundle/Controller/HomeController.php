@@ -6,15 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\ContactType;
+use AppBundle\Entity\Articles;
 
 
 
-class ContactController extends Controller
+class HomeController extends Controller
 {
     /**
      * @Route("/", name="home")
      */
-    public function contactAction(Request $request)
+    public function HomeAction(Request $request)
     {
         $formContact = $this->createForm(ContactType::class);
         $formContact->handleRequest($request);
@@ -49,9 +50,22 @@ class ContactController extends Controller
                 // Redirection vers la route contact
             return $this->redirectToRoute('home', ['_fragment' => 'contacter']);
             }
+            
+            
+              $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository("AppBundle:Articles")
+                ->findAll();
         
-        return $this->render('default/index.html.twig', ["formContact" => $formContact->createView()]);
+        //die(dump($articles));
+        
+        return $this->render('default/index.html.twig', [
+            "formContact" => $formContact->createView(),
+            "articles" => $articles,
+            ]);
     }
+    
+    
+      
 }
 
 

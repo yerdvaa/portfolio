@@ -52,18 +52,40 @@
             <div class="animLego">
                 <img src="" alt=""/>
             </div>
-            <button>Cliquer pour lancer l'animation</button>
         </article>     
         
 </section>
-            
+
+<section id="articles" class="container">
+        <h2>Actus du code</h2>
+            <p>Une sélection des articles que j'ai trouvé super intéressants sur le thème du code (ou pas!)</p>
+            <p>Vous avez une préférence sur le thème? Vous pouvez sélectionner celui qui vous plaît le plus.</p>
+        
+        <div>   
+            {% for article in articles %}
+                <article>
+                    <h3>{{ article.titre }}</h3>
+                        {% for category in article.categorie %}    
+                            <p>Catégorie: {{ category.nom }}</p>
+                        {% endfor %}  
+                        
+                            <img src ="{{ asset("img/database/" ~ article.image ) }}" alt="" />
+                        
+                            <cite>{{ article.auteur }}</cite>
+                            <p>{{ article.dateCreation | date("d/m/y") }}</p>
+                            <q>{{ article.content | slice(0,500) }}...</q>
+                            <a href="{{ article.lien }}">Pour lire cet article</a>
+                </article>
+            {% endfor %}
+        </div>
+</section>    
             
 <section id="contacter" >
         <div id="slide1">
             <div class="slide_inside">
                 <strong>
                     {% for flash_message in app.session.flashBag.get('success') %}
-                        <div>
+                        <div class="message">
                             {{ flash_message }}
                         </div>
                     {% endfor %}

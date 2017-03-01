@@ -33,6 +33,37 @@ function actualize()
 }
 
 
+
+
+//fonction pour les réalisations avec les legos
+
+function refreshAnimLego()
+{
+    var imgAnim = document.querySelector('.animLego img');
+    
+    imgAnim.src = '/Mon_Portfolio/web/' + img[statut.index].image;
+}
+
+function showImgLego()
+{
+   
+    statut.index++;
+    refreshAnimLego();
+    
+    if (statut.index >= 4)
+    {
+        statut.index = -1;
+        statut.index++;
+       // refreshAnimLego();
+    }
+}
+
+function onScrollPlayAnimLego()
+{
+       setInterval(showImgLego, 3000);
+       //console.log('toto');
+}
+
 // function pour le gestionnaire d'évènement au scroll
 function verifSiEnVue()
 {
@@ -40,14 +71,14 @@ function verifSiEnVue()
     var window_height = $(window).height();
     var window_topPosition = $(window).scrollTop();
     var window_bottomPosition = (window_height + window_topPosition);
-    
+
     $.each($anim_element, function()
     {
         var $element =  $(this);
         var element_height = $element.outerHeight();
         var element_topPosition = $element.offset().top;
         var element_bottomPosition = (element_height + element_topPosition);
-       
+
         // Vérification de la vue, si à l'écran ou pas
         if ((element_bottomPosition >= window_topPosition) && (element_topPosition <= window_bottomPosition))
         {
@@ -58,38 +89,13 @@ function verifSiEnVue()
             $element.removeClass('inView');
         }
     });
-}
-
-//fonction pour les réalisations avec les legos
-function refreshAnimLego()
-{
-    var imgAnim = document.querySelector('.animLego img');
     
-    imgAnim.src = '/Mon_Portfolio/web/' + img[statut.index].image;
+    /*if ($anim_element.hasClass('inView'))
+        {
+            onScrollPlayAnimLego();
+        }*/
+       
 }
-
-function showImgLego()
-{
-    statut.index++;
-    refreshAnimLego();
-    
-    if (statut.index >= 4)
-    {
-        statut.index = -1;
-        statut.index++;
-    }
-
-}
-
-function onScrollPlayAnimLego()
-{
-    if ($('.animLego').is('.inView'))
-    {
-       setInterval(showImgLego, 3000);
-    }
-}
-
-
 
 /*************************************************************/
 /*********************CODE PRINCIPAL**************************/
@@ -103,7 +109,6 @@ $(function ()
     $('.anim').delay(6000).animate({"opacity": 1}, 300);
     $('.home').delay(6000).fadeOut('slow');
     
-
     // bande sous la nav
     setInterval(actualize, 3000);
 
@@ -120,14 +125,21 @@ $(function ()
     statut.timer = null;
     
         // Installation gestionnaire d'évènement au scroll et au clic
-    $(window).on('scroll resize', verifSiEnVue);
+    
+    $(window).on('scroll', verifSiEnVue);
+    $(window).trigger('scroll');    
+    
 
-    $(window).trigger('scroll');
     
         // Lancement de l'animation
-    onScrollPlayAnimLego();
+       if ($('.animLego').has('inView'))
+        {
+            onScrollPlayAnimLego();
+        }
+      
     
         // Affichage initial
     refreshAnimLego();
+        
    
 });

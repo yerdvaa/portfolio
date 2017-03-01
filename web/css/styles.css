@@ -20,32 +20,31 @@ body {
     color: #28287a;
 }
 
-#slide, #slide1 {
+#slide, #slide1, header {
     background: url(../img/art.jpg) center 0 no-repeat fixed ;
     background-size: cover;
 }
 .container {
-	max-width: 1100px;
-	width: 80%;
-	margin: 0 auto;
-	font-size: 1.1rem;
+    max-width: 1100px;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.1rem;
 }
 
 header, main {
-  background-color: rgba(255, 73, 163);
-}
-
-/*header*/
-header {
-    background-color: #3C1236;
+    background-color: rgba(255, 73, 163);
 }
 
 header div {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: #3C1236;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
 }
+
+/*nav*/
 
 nav a{
   display: inline-block;
@@ -83,17 +82,6 @@ a {
   padding: 30px 0 20px;
 }
 
-.svgBas {
-  padding: 30px 0 70px;
-}
-
-.svgBas {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 /*footer*/
 footer {
   position: absolute;
@@ -124,7 +112,7 @@ footer section {
   font-size: 4rem;
 }
 
-#home article{
+#home article {
   width : 50%;
   padding: 30px 30px 15px;
   font-family: 'Fredericka the Great', cursive;
@@ -196,16 +184,17 @@ footer section {
     width: 500px;
     height: auto;
 }
-.realisations a {
-    text-align: right;
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 0.8rem;
+
+/***********ARTICLES***********/
+
+#articles {
+    font-family: 'Scope One', serif;
 }
 
-.realisations a:hover {
-    color: #FFAB68;
+#articles div {
+    display: flex;
+    justify-content: raw;
 }
-
 
 /***********CONTACT***********/
 #contacter {
@@ -330,4 +319,12 @@ footer section {
 #contact .form div ul li {
     color: #FFF;
     font-size: 0.75rem;
+}
+
+.contacter p {
+    padding: 10px;
+}
+
+.message {
+    padding-top: 30px;
 }
