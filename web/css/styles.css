@@ -74,10 +74,21 @@ h2 {
     text-align: center;
 }
 
+h3 {
+   font-family: 'Fredericka the Great', cursive;
+    font-size: 1.2rem;
+    text-align: center;
+} 
+
 a {
   text-decoration: none;
   color: #FF49A3;
 }
+
+a:hover {
+    color: #FFAB68;
+}
+
 /*SVG*/
 .svgHaut {
   padding: 30px 0 20px;
@@ -188,26 +199,50 @@ footer section {
 
 /***********ARTICLES***********/
 
-#articles {
+#articles, #articlesSelect {
     font-family: 'Scope One', serif;
+    text-align: center;
+    
 }
 
-#articles div {
+#articles article, #articlesSelect article {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#articles div, #articlesSelect div {
     display: flex;
     justify-content: space-around;
 }
 
-#articles div article {
+#articles div article, #articlesSelect div article {
     border: 1px solid black;
     margin: 10px;
     padding: 20px;
     width: 500px;
+    box-shadow: 2px 2px 2px #DCDCDC;
+    background-color: #eac6ef;
 }
 
-#articles div article img {
+#articles div article img, #articlesSelect div article img {
     width: 400px;
     heigth: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
+
+#articles div article a:hover, #articlesSelect div article a:hover {
+    font-weight: bold;
+    color: #4B2242;
+}
+
+.categorie {
+    text-align: right;
+    font-size: 0.7rem;
+    font-style: italic;
+    padding-top: 10px;
+}
+
 
 /***********CONTACT***********/
 #contacter {

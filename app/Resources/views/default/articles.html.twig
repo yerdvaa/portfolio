@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block articlesSelect %}
+           
+        <section id="articlesSelect" class="container">
+            
+            {% if articlesSelect is defined %}
+                    
+                        <h2>Vous avez sélectionné la catégorie: {{ articlesSelect.nom }}</h2>
+                    
+            {% endif %}
+            <div id="select" class="articles container">
+                    
+                {% if articlesSelect is defined %}
+                    {% for article in articlesSelect %}
+                        
+                        <article>
+                            <h3>{{ article.titre }}</h3>
+
+                                <p class="categorie">Catégorie: {{ article.categorie.nom }}</p>
+
+                                <img src ="{{ asset("img/database/" ~ article.image ) }}" alt="" />
+
+                                <p><cite>{{ article.auteur }}</cite></p>
+                                <p>{{ article.dateCreation | date("d/m/y") }}</p>
+                                <q>{{ article.content | slice(0,400) }}...</q>
+                                <a href="{{ article.lien }}">Pour lire cet article</a>
+                        </article>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>    
+ {% endblock %}           
+            
+            
+            
+               
+  
+    
+
+    
+    
+    

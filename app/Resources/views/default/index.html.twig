@@ -56,102 +56,55 @@
         
 </section>
 
-<section id="articles" class="container">
+ <section id="articles" class="container">
+    
         <h2>Actus du code</h2>
-            <p>Une sélection des articles que j'ai trouvé super intéressants sur le thème du code (ou pas!)</p>
-            <p>Vous avez une préférence sur le thème? Vous pouvez sélectionner celui qui vous plaît le plus.</p>
-        
-        <div>  
-            
-            {% for article in articles %}
-                
-                <article>
-                    <h3>{{ article.titre }}</h3>
-                        {% for category in article.categorie %}    
-                            <p>Catégorie: {{ category.nom }}</p>
-                        {% endfor %}  
-                        
-                            <img src ="{{ asset("img/database/" ~ article.image ) }}" alt="" />
-                        
-                            <cite>{{ article.auteur }}</cite>
-                            <p>{{ article.dateCreation | date("d/m/y") }}</p>
-                            <q>{{ article.content | slice(0,500) }}...</q>
-                            <a href="{{ article.lien }}">Pour lire cet article</a>
-                </article>
-            {% endfor %}
-        </div>
-</section>    
-            
-<section id="contacter" >
-        <div id="slide1">
-            <div class="slide_inside">
-                <strong>
-                    {% for flash_message in app.session.flashBag.get('success') %}
-                        <div class="message">
-                            {{ flash_message }}
-                        </div>
-                    {% endfor %}
-                </strong>
-        
-                <section id="contact">
+                   <article>
+                       <p>Une sélection des articles que j'ai trouvé super intéressants sur le thème du code (ou pas!)</p>
+                       <p>Vous avez une préférence sur le thème? Vous pouvez sélectionner celui qui vous plaît le plus.</p>
+                   </article>
 
-                    <article>
-                        <h1>Contactez-moi</h1>
-                    </article>
+                   <div>
+                        {#{{ form_start(formSelectCat, {attr:{ novalidate:"novalidate", id: "formCat"} } )}}#}
+                            <div>
+                                   {#{{ form_errors(formSelectCat.nom) }}
+                                   {{ form_label(formSelectCat.nom,  "Catégories", {label_attr: {class: "catform"} } ) }}
+                                   {{ form_widget(formSelectCat.nom, {attr: { class: "catform", selected: "selected"} } ) }}#}
+                               </div>
+                               <form action="{{ path("articles") }}" method="POST">   
+                                   <select name="cat">
+                               {% for categorie in catSelect %}
+                                   <option value="{{ categorie.id }}">{{ categorie.nom }}</option>
+                               {% endfor %}
+                                   </select>
+                           <input type="submit" id="btn" value="OK">
+                               </form>
+                       {#{{ form_end(formSelectCat) }}#}
+                   </div>            
 
-                    <article class="form">
-                        <div class="contacter">
-                            <p>Besoin de plus d'informations ? Une demande de devis ?
-                N'hésitez à me contacter via le formulaire ci-dessous : </p>
-                        </div>
+                   
+                   
+                    <div class="articles">  
 
-                        {{ form_start(formContact, {attr:{ novalidate:"novalidate"}} )}}
+                           {% for article in articles %}
+                               <article>
+                                   <h3>{{ article.titre }}</h3>
 
+                                   <p class="categorie">Catégorie: {{ article.categorie.nom }}</p>
 
-                        <div>
-                            {{ form_errors(formContact.firstname, {attr: {class: "error"} } ) }}
-                            {{ form_widget(formContact.firstname, {attr: {placeholder: "Votre prénom", class: "contact name"} } ) }}
-                        </div>
+                                   <img src ="{{ asset("img/database/" ~ article.image ) }}" alt="" />
 
-                        <div>
-                            {{ form_errors(formContact.lastname, {attr: {class: "error"} } ) }}
-                            {{ form_widget(formContact.lastname, {attr: {placeholder: "Votre nom", class: "contact name"} } ) }}
-                        </div>
+                                   <p><cite>{{ article.auteur }}</cite></p>
+                                   <p>{{ article.dateCreation | date("d/m/y") }}</p>
+                                   <q>{{ article.content | slice(0,400) }}...</q>
+                                   <a href="{{ article.lien }}">Pour lire cet article</a>
+                                   </article>
+                           {% endfor %}
+                   </div>   
 
-                        <div>
-                            {{ form_errors(formContact.phone) }}
-                            {{ form_widget(formContact.phone, {attr: {placeholder: "Votre numéro de téléphone", class: "contact mail"} } ) }}
-                        </div>
+  </section>             
 
-                        <div>
-                            {{ form_errors(formContact.email, {attr: {class: "error"} } ) }}
-                            {{ form_widget(formContact.email,
-                            {
-                                attr: {
-                                placeholder: 'email',
-                                class: "contact mail",
-                                id: "votre-super-id"
-                                }
-                            })
-                            }}
-                        </div>
-
-                        <div>
-                            {{ form_errors(formContact.content, {attr: {class: "error"} } ) }}
-                            {{ form_widget(formContact.content, {attr: {placeholder: "Votre message", class: "textarea"} }) }}
-                        </div>
-
-
-                                <button class="contact send" type="submit">Envoyer</button>
-
-                            {{ form_end(formContact) }}
-                    </article>        
-
-
-        </div>
-    </div>
- </section>
-</section>                
-
+               {% include "default/contact.html.twig" %}
+                           
 {% endblock %}
 

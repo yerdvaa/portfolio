@@ -9,7 +9,7 @@
     {% block stylesheets %}
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Scope+One" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="{{ asset("css/reset.css") }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset("/css/reset.css") }}">
 	<link href="{{ asset("css/animate.css") }}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset("css/styles.css") }}">
 	  <!-- Compiled and minified CSS 
@@ -21,14 +21,14 @@
 <body>
 	<header>
             <div class="anim">
-                <a href="#home"><img src="{{ asset("img/logo.svg") }}" alt="logo"></a>
+                <a href="{{ path("home") }}"><img src="{{ asset("img/logo.svg") }}" alt="logo"></a>
 		
 		<nav>
-			<a href="#home">Accueil</a>
-			<a href="#competences">Compétences</a>
-			<a href="#realisations">Portfolio</a>
-                        <a href="#articles">Actus du code</a>
-			<a href="#contacter">Contact</a>
+			<a href="{{ path("home") }}">Accueil</a>
+			<a href="{{ path("home") }}#competences">Compétences</a>
+			<a href="{{ path("home") }}#realisations">Portfolio</a>
+                        <a href="{{ path("home") }}#articles">Actus du code</a>
+			<a href="{{ path("home") }}#contacter">Contact</a>
 		</nav>
             </div>
 	</header>
@@ -36,9 +36,8 @@
 		
             
             {% block content %} {% endblock %}
+            {% block articlesSelect %} {% endblock %}
             
-            
-		
 	</main>
 	<footer class="anim">
 		<section class="container">

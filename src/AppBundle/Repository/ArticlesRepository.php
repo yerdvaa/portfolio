@@ -38,4 +38,17 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
           
         return $result;
     }
+    
+    
+    public function selectArticles($select)
+    {
+        $query = $this->createQueryBuilder('articles')
+                ->select('articles')
+                ->where('articles.categorie = :selection')
+                ->setParameters(['selection' => $select])
+                ->getQuery();
+        
+        //die(dump($query->getResult()));
+        return $query->getResult();
+    }
 }

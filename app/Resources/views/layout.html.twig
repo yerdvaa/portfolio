@@ -20,15 +20,17 @@
 </head>
 <body>
 	<header>
-                <a href="{{ path("accueil")}}"><img src="{{ asset("img/logo.svg") }}" alt="logo">
+            <div>
+                <a href="{{ path("home") }}"><img src="{{ asset("img/logo.svg") }}" alt="logo"></a>
 		
 		<nav>
-                    <a href="#home">Accueil</a>
-                    <a href="#competences">Compétences</a>
-                    <a href="#realisations">Portfolio</a>
-                    <a href="#articles">Actus du code</a>
-                    <a href="#contacter">Contact</a>
+			<a href="{{ path("home") }}">Accueil</a>
+			<a href="{{ path("home") }}#competences">Compétences</a>
+			<a href="{{ path("home") }}#realisations">Portfolio</a>
+                        <a href="{{ path("home") }}#articles">Actus du code</a>
+			<a href="{{ path("home") }}#contacter">Contact</a>
 		</nav>
+            </div>
 	</header>
 	<main>
 		<!-- <div class="svgHaut">
@@ -36,8 +38,9 @@
 		</div> -->
             
             {% block content %} {% endblock %}
-            
-            
+            {% block articlesSelect %} {% endblock %}
+            {#{% include "default/contact.html.twig" %}#}
+             
 		
 		<!-- <div class="svgBas">
 			<svg width="100%" height="60" class="svg1"></svg>

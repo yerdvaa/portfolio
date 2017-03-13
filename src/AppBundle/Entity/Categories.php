@@ -27,12 +27,14 @@ class Categories
      * @ORM\Column(name="nom", type="string", length=200)
      */
     private $nom;
+    
 
+   
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {

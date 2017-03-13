@@ -44,7 +44,6 @@ class Articles
 
     /**
      * @ORM\ManyToOne(targetEntity="Categories")
-     *
      * @ORM\JoinColumn(name="id_categorie", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     private $categorie;
@@ -77,10 +76,14 @@ class Articles
      */
     private $image;
 
+    
+        
+        
+    
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -160,54 +163,6 @@ class Articles
     }
 
     /**
-     * Set categorie
-     *
-     * @param string $categorie
-     *
-     * @return Articles
-     */
-    public function setCategorie($categorie)
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
-
-    /**
-     * Get categorie
-     *
-     * @return string
-     */
-    public function getCategorie()
-    {
-        return $this->categorie;
-    }
-
-    /**
-     * Set source
-     *
-     * @param string $source
-     *
-     * @return Articles
-     */
-    public function setSource($source)
-    {
-        $this->source = $source;
-
-        return $this;
-    }
-
-    /**
-     * Get source
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->source;
-    }
-
-    /**
      * Set dateCreation
      *
      * @param \DateTime $dateCreation
@@ -277,5 +232,53 @@ class Articles
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AppBundle\Entity\Categories $categorie
+     *
+     * @return Articles
+     */
+    public function setCategorie(\AppBundle\Entity\Categories $categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AppBundle\Entity\Categories
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * Set source
+     *
+     * @param \AppBundle\Entity\Sources $source
+     *
+     * @return Articles
+     */
+    public function setSource(\AppBundle\Entity\Sources $source)
+    {
+        $this->source = $source;
+
+        return $this;
+    }
+
+    /**
+     * Get source
+     *
+     * @return \AppBundle\Entity\Sources
+     */
+    public function getSource()
+    {
+        return $this->source;
     }
 }
