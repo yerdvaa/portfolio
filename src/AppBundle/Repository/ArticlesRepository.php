@@ -34,8 +34,7 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
         $query->add('where', $query->expr()->in('a.id', $randID));
                 
         $result = $query->getQuery()->getResult();
-       
-          
+                
         return $result;
     }
     

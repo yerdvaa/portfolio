@@ -1,6 +1,6 @@
-/***********LAYOUT.HTML.TWIG***********/
-/******************et******************/
-/*******LAYOUT_ACCUEIL.HTML.TWIG*******/
+/**************************************/
+/**************  CSS  *****************/
+/**************************************/
 
 /*body et container*/
 * {
@@ -40,28 +40,43 @@ header div {
     background-color: #3C1236;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+#menu-icon {
+    display: none;
+    width: 50px;
+    heigth: auto;
 }
 
 /*nav*/
 
 nav a{
   display: inline-block;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
   color: #FF49A3;
   font-size: 1.1rem;
 }
 
-nav a .fa{
-  display: block;
-  text-align: center;
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
 }
 
 /*titres et liens*/
 h1{
+  padding: 50px;
   font-family: 'Fredericka the Great', cursive;
   font-size: 2rem;
   color: #FFAB68;
@@ -91,7 +106,7 @@ a:hover {
 
 /*SVG*/
 .svgHaut {
-  padding: 30px 0 20px;
+  padding: 50px 0 20px;
 }
 
 /*footer*/
@@ -108,6 +123,10 @@ footer section {
   justify-content: space-around;
   padding: 20px;
   color: #FF49A3;
+}
+
+footer section a, .fa {
+    font-size: 1.8rem;
 }
 
 /***********A PROPOS***********/
@@ -171,7 +190,7 @@ footer section {
 
 /***********REALISATIONS***********/
 #realisations {
-    padding-bottom: 80px;
+    padding: 50px 0;
 }
 
 #realisations h2 {
@@ -201,13 +220,54 @@ footer section {
 
 #articles, #articlesSelect {
     font-family: 'Scope One', serif;
-    text-align: center;
+    text-align: center; 
+}
+
+#articlesSelect h2 {
+    padding-top: 70px;
+}
+
+select {
     
+    height:30px;
+    width: 150px;
+    padding: 2px 10px 2px 2px;
+    outline: none;
+    color: #74646e;
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+    background: #fff; 
+}
+
+#btn {
+    margin-left: 10px;
+    padding: 5px 15px 5px;
+    font-size: 1.1rem;
+    background-color: #3C1236;
+    font-weight: bold;
+    text-shadow: 1px 1px #F36C8C;
+    color: #ffffff;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border: 1px solid #F36C8C;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    /*font-family: 'Fredericka the Great', cursive;*/
+}
+
+#btn:hover {
+     background-color: #FFAB68;
+     box-shadow: 2px 2px 2px #eac6ef;
+     -moz-box-shadow: 2px 2px 2px #eac6ef;
+     -webkit-box-shadow: 2px 2px 2px #eac6ef;
 }
 
 #articles article, #articlesSelect article {
     padding: 20px;
-    margin-bottom: 20px;
 }
 
 #articles div, #articlesSelect div {
@@ -215,12 +275,21 @@ footer section {
     justify-content: space-around;
 }
 
+#articles div article {
+   margin: 30px 20px 100px; 
+}
+
+#articlesSelect div article {
+margin: 30px 20px 130px;
+}
+
 #articles div article, #articlesSelect div article {
     border: 1px solid black;
-    margin: 10px;
     padding: 20px;
     width: 500px;
     box-shadow: 2px 2px 2px #DCDCDC;
+    -moz-box-shadow: 2px 2px 2px #DCDCDC;
+    -webkit-box-shadow: 2px 2px 2px #DCDCDC;
     background-color: #eac6ef;
 }
 
@@ -243,6 +312,16 @@ footer section {
     padding-top: 10px;
 }
 
+.retour {
+    font-size: 2rem;
+    padding-top: 280px;
+    -webkit-transform:rotate(-40deg);
+    -moz-transform:rotate(-40deg);
+    -o-transform:rotate(-40deg);
+    -ms-transform:rotate(-40deg);  
+    transform:  rotate(-40deg); 
+    font-family: 'Fredericka the Great', cursive;
+}
 
 /***********CONTACT***********/
 #contacter {
@@ -262,7 +341,7 @@ footer section {
 
 #contact {
     display: flex;
-    padding: 80px 0 80px;
+    padding: 120px 0 120px;
 }
 
 #contact h1 {
@@ -375,4 +454,200 @@ footer section {
 
 .message {
     padding-top: 30px;
+}
+
+/**********************************************/
+/**************  Media Queries  ***************/
+/**********************************************/
+
+@media screen and (max-width: 1280px)
+{
+    /*Présentation*/
+    #home article {
+        width : 80%;
+    }
+    
+    /*compétences*/
+    #competences img {
+        width: 80%;
+        margin-left: 65px;
+    }
+    
+    /*réalisations*/
+    .realisations {
+        padding-right: 90px;
+    }
+    
+    .realisations .animLego {
+        width: 350px;
+    }
+    
+    .realisations .animLego img {
+        width: 400px;
+    }
+    
+    /*articles*/   
+    #articles div, #articlesSelect div {
+        flex-direction: column;
+        align-items: center;
+    }
+    #articles div article {
+        margin: 50px 10px 40px;
+    }
+    
+    #articlesSelect div article {
+        margin: 0px 20px 100px;
+    }
+    
+    #articlesSelect h2 {
+        padding-bottom: 70px;
+    }
+    
+    #articles div article, #articlesSelect div article {
+        padding: 10px;
+        width: 90%;
+    }
+    
+    #articles div article img, #articlesSelect div article img {
+        width: 300px;
+        heigth: auto;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    
+    .retour {
+        padding-top: 0px;
+        position: absolute;
+        top: 250px;
+        left: 0px;
+        font-size: 1.5rem;
+    }
+    
+    /*contact*/
+    #contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0 80px;
+    }
+
+    #contact h1 {
+        padding: 20px;
+        font-size: 3.5rem;
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);  
+        transform:  rotate(0deg);       
+    }
+}
+
+@media screen and (max-width: 960px){
+    .container {
+        width: 100%;
+    }
+    /*nav*/
+    #menu-icon {
+        display: inline-block;
+    }
+    
+    nav ul, nav:active ul { 
+        display: none;
+	position: absolute;
+	padding: 20px;
+	background: #3C1236;
+	border: 5px solid #BA63C6;
+	right: 20px;
+	top: 75px;
+	width: 50%;
+	border-radius: 4px 0 4px 4px;
+    }
+
+    nav li {
+        text-align: center;
+	width: 100%;
+	padding: 10px 0;
+	margin: 0;
+    }
+
+    nav:hover ul {
+	display: block;
+    }
+    
+    nav a {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+    /*SVG*/
+    .svgHaut {
+        padding: 130px 0 50px;
+    }
+    
+    /*Home*/
+    #home h1{
+        font-size: 3rem;
+    }
+    
+    #home h1:nth-child(odd) {
+        padding: 70px;
+    }
+    #home h1:nth-child(even) {
+        padding: 50px;
+    }
+    
+    #home article {
+        padding: 20px 20px 10px;
+        font-size: 1rem;
+        width: 90%;
+    }
+    
+    /*Compétences*/
+    #competences img {
+        padding-top: 40px;
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    /*Réalisations*/
+    .realisations {
+        padding: 80px 50px 40px;
+    }
+    
+    /*Articles*/
+    #articles div article, #articlesSelect div article {
+        margin: 30px 10px 20px;
+    }
+    
+    #articlesSelect h2 {
+        padding-top: 100px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 1.8rem;
+    }
+    
+    .retour {
+        padding-top: 20px;
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        -ms-transform:rotate(0deg);  
+        transform:  rotate(0deg); 
+    }
+    
+    /*Contact*/
+    #contact article {
+        width: 500px;
+    }
+    
+    #contact article form div {
+        padding-right: 20px;
+    }
+    
+    .form {
+        border: 0 solid rgba(0,0,0,0);
+        border-radius: 0;
+        box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
 }

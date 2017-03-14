@@ -89,13 +89,10 @@ function verifSiEnVue()
             $element.removeClass('inView');
         }
     });
-    
-    /*if ($anim_element.hasClass('inView'))
-        {
-            onScrollPlayAnimLego();
-        }*/
-       
+
 }
+
+
 
 /*************************************************************/
 /*********************CODE PRINCIPAL**************************/
@@ -139,40 +136,7 @@ $(function ()
  
         // Affichage initial
     refreshAnimLego();
-    
-        // choix categorie articles
-        function onSuccess() {
-                console.log('toto');
-            }
-    $('.catform').on('change', function(){
-        var param = {};
-            param = 'cat=' + $('.catform').find('option:selected').val();
-   
+        
+        //bouton select
        
-       if (param != "")
-       {
-            $('.articles').fadeOut('slow');
-            console.log(param);
-            /*$.get('http://localhost/Mon_Portfolio/web/app_dev.php/home/?'+$param, function()
-            {        
-                console.log($param);    
-            });*/
-            
-            $.ajax({
-                method: 'GET',
-                url: 'http://localhost/Mon_Portfolio/web/app_dev.php/home/',
-                data: param,
-                datatype: 'json',
-                success: function($param){
-                    console.log('ok');
-                }
-            });
-            
-            $('#articles #select').fadeIn('slow');
-            return false;
-        }
-
-    });  
-  
-
 });

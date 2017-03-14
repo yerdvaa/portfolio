@@ -58,27 +58,18 @@ class HomeController extends Controller
                 $articles = $em->getRepository("AppBundle:Articles")
                     ->randChoiceArticles();
                 
-        // Choix des articles selon la catégorie souhaitée avec le formSelectCat
                 
-                //Choix des articles selon la catégorie souhaitée (select)
+        //Choix des articles selon la catégorie souhaitée (select)
                 $em = $this->getDoctrine()->getManager();
                 $catSelect = $em->getRepository("AppBundle:Categories")
                         ->findAll();
                 
-           /* $formSelectCat = $this->createForm(SelectCatType::class);
-            $formSelectCat->handleRequest($request);
-            
-            if ($formSelectCat->isSubmitted() && $formSelectCat->isValid()) 
-                {
-                    return $this->redirectToRoute('articles');
-                }*/
+           
         
         return $this->render('default/index.html.twig', [
             "formContact" => $formContact->createView(),
-            //"formSelectCat" => $formSelectCat->createView(),
             "articles" => $articles,
-            "catSelect" => $catSelect,
-            
+            "catSelect" => $catSelect,            
             ]);
     }
     
@@ -86,15 +77,7 @@ class HomeController extends Controller
      * @Route("/articles", name="articles")
      */
     public function ArticlesByCategoryAction(Request $request)
-    {
-           /* $formSelectCat = $this->createForm(SelectCatType::class);
-            $formSelectCat->handleRequest($request);*/
-            //$catId = $formSelectCat->getData();
-        //Sélection aléatoire des articles
-             /*   $em = $this->getDoctrine()->getManager();
-                $articles = $em->getRepository("AppBundle:Articles")
-                    ->randChoiceArticles();*/
-                
+    {                
         // Choix des articles selon la catégorie souhaitée (select)
                 $em = $this->getDoctrine()->getManager();
                 $catSelect = $em->getRepository("AppBundle:Categories")
@@ -109,12 +92,15 @@ class HomeController extends Controller
                          ->selectArticles($catId);
                 
                  //dump($articlesSelect);
+        // affichage du nom de la catégorie
+                 $categorieSelect = $em->getRepository("AppBundle:Categories")
+                         ->find($catId);
+                 
                  
         return $this->render('default/articles.html.twig', [
-                //"articles" => $articles,
                 "catSelect" => $catSelect,
-                "articlesSelect"=> $articlesSelect,
-                //"formSelectCat" => $formSelectCat->createView(),
+                "articlesSelect" => $articlesSelect,
+                "categorieSelect" => $categorieSelect,
             ]);
     }
     
