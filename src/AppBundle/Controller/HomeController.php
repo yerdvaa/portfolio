@@ -16,7 +16,15 @@ class HomeController extends Controller
     /**
      * @Route("/", name="home")
      */
-    public function HomeAction(Request $request)
+     public function HomeAction()
+    {
+         return $this->render('intro.html.twig');
+    }
+    
+    /**
+     * @Route("/accueil", name="accueil")
+     */
+    public function accueilAction(Request $request)
     {
         //formulaire de contact
             $formContact = $this->createForm(ContactType::class);

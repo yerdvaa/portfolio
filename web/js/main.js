@@ -13,7 +13,7 @@ var img =
         ];
 
 var statut;
-
+var navImg = document.querySelector('nav img');
 
 /*************************************************************/
 /***********************FONCTIONS*****************************/
@@ -100,20 +100,15 @@ function verifSiEnVue()
 
 $(function ()
 {
-    //intro du site
-    $('.anim').addClass('is-hidden').css({"opacity": 0});
-    $('.home').textillate({in: {effect: 'rollIn'}});
-    $('.anim').delay(6000).animate({"opacity": 1}, 300);
-    $('.home').delay(6000).fadeOut('slow');
-    
     // bande sous la nav
     setInterval(actualize, 3000);
 
     // Effet parallax
     $('#slide').parallax('center', 0, 2, true);
-    $('#slide').parallax('center', 2900, 2, true);
+    $('#slide').parallax('center', 500, 2, true);
 
-    
+    // Nav pour smartphone
+
     // Anim réalisation au scroll et lancement au clic
     
         // Initialisation de l'anim
@@ -137,6 +132,5 @@ $(function ()
         // Affichage initial
     refreshAnimLego();
         
-        //bouton select
        
 });

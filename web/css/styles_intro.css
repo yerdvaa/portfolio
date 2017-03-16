@@ -1,0 +1,53 @@
+/**************************************/
+/********** CSS page intro ************/
+/**************************************/
+
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: 'Scope One', serif;
+    min-height: 100%;
+    position: relative;
+    color: #28287a;
+    background: url(../img/art.jpg) center 0 no-repeat fixed ;
+    background-size: cover;
+}
+
+#intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 80px;
+}
+
+#intro {
+    margin: 15%;
+}
+
+#intro div h1{
+  font-size: 4rem;
+  padding: 50px;
+  font-family: 'Fredericka the Great', cursive;
+  color: #FFAB68;
+}
+
+#intro a {
+    font-size: 1.5rem;
+    font-family: 'Fredericka the Great', cursive;
+    color: #FF49A3;
+}
+
+#intro a:hover {
+    color: #FFAB68;
+}

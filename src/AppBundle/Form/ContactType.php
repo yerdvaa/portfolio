@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Form\FormBuilderInterface;
 use AppBundle\Form\Type\PhoneType;
@@ -41,7 +42,7 @@ class ContactType extends AbstractType
                     ]
             ])
             ->add('phone', PhoneType::class)
-            ->add('content', TextType::class, [
+            ->add('content', TextareaType::class, [
                 'constraints' =>
                     [
                         new Assert\NotBlank(['message' => 'Quel est votre message ???'])

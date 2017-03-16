@@ -50,7 +50,6 @@ class Articles
 
     /**
      * @ORM\ManyToOne(targetEntity="Sources")
-     *
      * @ORM\JoinColumn(name="id_source", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     private $source;

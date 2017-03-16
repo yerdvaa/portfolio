@@ -7,7 +7,7 @@
             
             <h2>Vous avez sélectionné la catégorie : {{ categorieSelect.nom }}</h2>
             <div id="select" class="articles container">
-                    <a href="{{ path("home") }}" class="retour">Retour à l'Accueil</a>
+                    <a href="{{ path("accueil") }}" class="retour">Retour à l'Accueil</a>
                 {% if articlesSelect is defined %}
                     {% for article in articlesSelect %}
                         
@@ -15,7 +15,8 @@
                             <h3>{{ article.titre }}</h3>
 
                                 <p class="categorie">Catégorie: {{ article.categorie.nom }}</p>
-
+                                <p class="categorie">Source: {{ article.source.nom }}</p>
+                                
                                 <img src ="{{ asset("img/database/" ~ article.image ) }}" alt="" />
 
                                 <p><cite>{{ article.auteur }}</cite></p>

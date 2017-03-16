@@ -4,7 +4,8 @@
     
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Portfolio</title>
+	<title>CreArtDev</title>
+        <link rel="shorcut icon" type="image/svg" href="{{ asset("img/logo.svg") }}">
         
     {% block stylesheets %}
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Scope+One" rel="stylesheet">
@@ -25,11 +26,11 @@
 		<nav>
                     <img src="{{ asset("img/menu.png") }}" alt="Icône menu" id="menu-icon">
                     <ul>
-                        <li><a href="{{ path("home") }}">Accueil</a></li>
-			<li><a href="{{ path("home") }}#competences">Compétences</a></li>
-			<li><a href="{{ path("home") }}#realisations">Portfolio</a></li>
-                        <li><a href="{{ path("home") }}#articles">Actus du code</a></li>
-			<li><a href="{{ path("home") }}#contacter">Contact</a></li>
+                        <li><a href="{{ path("accueil") }}">Accueil</a></li>
+			<li><a href="{{ path("accueil") }}#competences">Compétences</a></li>
+			<li><a href="{{ path("accueil") }}#realisations">Portfolio</a></li>
+                        <li><a href="{{ path("accueil") }}#articles">Actus du code</a></li>
+			<li><a href="{{ path("accueil") }}#contacter">Contact</a></li>
                     </ul>
 		</nav>
             </div>
@@ -55,12 +56,12 @@
 			<a href="{{ asset("file/CV Audrey SERIN.pdf") }}">CV</a>
 				
 			<a href="{{ asset("https://github.com/yerdvaa") }}"><i class="fa fa-github" aria-hidden="true"></i></a>
-			<a href="#contacter"<i class="fa fa-envelope" aria-hidden="true"></i> </a>
+			<a href="mailto:audrey.serin@creartdev.fr"<i class="fa fa-envelope" aria-hidden="true"></i> </a>
 				
 		</section>
 	</footer>
 
-    {% block javascript %}
+  {% block javascript %}
 	<!-- Compiled and minified JavaScript
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>-->
 	
@@ -76,6 +77,7 @@
 	<script src="{{ asset("js/jquery.lettering.js") }}"></script>
 	<script src="{{ asset("js/jquery.textillate.js") }}"></script>
         <script src="{{ asset("js/jquery.parallax.js") }}"></script>
+
         
         <script src="{{ asset("js/main.js")}}"></script>
     {% endblock %}

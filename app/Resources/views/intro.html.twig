@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Portfolio</title>
+        
+    {% block stylesheets %}
+        <link rel="shorcut icon" type="image/svg" href="{{ asset("img/logo.svg") }}">
+	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Scope+One" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ asset("/css/reset.css") }}">
+	<link href="{{ asset("css/animate.css") }}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ asset("css/styles_intro.css") }}">
+	   <!--Compiled and minified CSS 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">-->
+    {% endblock %}   
+    
+
+</head>
+<body>
+	<header>
+
+	</header>
+	<main>
+            <section id="intro">
+                <div>
+                    <img src="{{ asset("img/logo.svg") }}" alt="logo" >
+                    <h1 class="home">Audrey Serin</h1>
+                    <h1 class="home">Intégrateur Développeur Web</h1>
+                </div>
+                    <a href="{{ path("accueil") }}">Pour voir la suite ... il faut cliquer !</a>
+            </section>
+    	</main>
+	<footer>
+		
+	</footer>
+
+  {% block javascript %}
+	
+        <script src="{{ asset("js/classe/MasterPiece.class.js") }}"></script>
+
+	<script
+		  src="https://code.jquery.com/jquery-3.1.1.min.js"
+		  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+		  crossorigin="anonymous"></script>
+		  
+	<script src="{{ asset("js/jquery.lettering.js") }}"></script>
+	<script src="{{ asset("js/jquery.textillate.js") }}"></script>
+
+        
+        <script src="{{ asset("js/main_intro.js")}}"></script>
+    {% endblock %}
+	
+</body>
+</html>
