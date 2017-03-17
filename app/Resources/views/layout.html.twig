@@ -21,19 +21,21 @@
 </head>
 <body>
 	<header>
+            {% block nav %}
             <div>
 		
-		<nav>
+		<nav class="nav">
                     <img src="{{ asset("img/menu.png") }}" alt="Icône menu" id="menu-icon">
                     <ul>
-                        <li><a href="{{ path("accueil") }}">Accueil</a></li>
-			<li><a href="{{ path("accueil") }}#competences">Compétences</a></li>
-			<li><a href="{{ path("accueil") }}#realisations">Portfolio</a></li>
-                        <li><a href="{{ path("accueil") }}#articles">Actus du code</a></li>
-			<li><a href="{{ path("accueil") }}#contacter">Contact</a></li>
+                        <li><a href="#home">Accueil</a></li>
+			<li><a href="#competences">Compétences</a></li>
+			<li><a href="#realisations">Portfolio</a></li>
+                        <li><a href="#articles">Actus</a></li>
+			<li><a href="#contacter">Contact</a></li>
                     </ul>
 		</nav>
             </div>
+            {% endblock %}
 	</header>
 	<main>
             
@@ -62,9 +64,6 @@
 	</footer>
 
   {% block javascript %}
-	<!-- Compiled and minified JavaScript
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>-->
-	
 	<script src="{{ asset("js/utilities.js") }}"></script>
         <script src="{{ asset("js/classe/Square.class.js") }}"></script>
         <script src="{{ asset("js/classe/MasterPiece.class.js") }}"></script>

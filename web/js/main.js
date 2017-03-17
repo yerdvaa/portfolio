@@ -101,36 +101,64 @@ function verifSiEnVue()
 $(function ()
 {
     // bande sous la nav
-    setInterval(actualize, 3000);
+        setInterval(actualize, 3000);
 
     // Effet parallax
-    $('#slide').parallax('center', 0, 2, true);
-    $('#slide').parallax('center', 500, 2, true);
+        $('#slide').parallax('center', 0, 2, true);
+        $('#slide').parallax('center', 500, 2, true);
 
     // Nav pour smartphone
+        if (window.matchMedia("(max-width: 960px)").matches)
+        {
+            $('#menu-icon').on('click', function(){
+                $('.nav ul').slideDown();
+                $(this).addClass('active');
+            });
 
+            $('ul li').on('click', function(){
+                $('.nav ul').slideUp();
+                $(this).removeClass('active');
+            });
+        }
+    
     // Anim réalisation au scroll et lancement au clic
     
         // Initialisation de l'anim
-    statut = {};
-    statut.index = 0;
-    statut.timer = null;
+        statut = {};
+        statut.index = 0;
+        statut.timer = null;
     
         // Installation gestionnaire d'évènement au scroll et au clic
-    
-    $(window).on('scroll', verifSiEnVue);
-    $(window).trigger('scroll');    
-    
+        $(window).on('scroll', verifSiEnVue);
+        $(window).trigger('scroll');    
 
-    
         // Lancement de l'animation
-       if ($('.animLego').has('inView'))
+        if ($('.animLego').has('inView'))
         {
             onScrollPlayAnimLego();
         }
  
         // Affichage initial
-    refreshAnimLego();
-        
-       
+        refreshAnimLego();
+     
+    // Scroll à l'ancre lors de la navigation
+    if (window.matchMedia("(min-width: 960px)").matches)
+        {
+            $('.nav a').on('click', function(evt){
+           // bloquer le comportement par défaut: on ne rechargera pas la page
+           evt.preventDefault(); 
+           // enregistre la valeur de l'attribut  href dans la variable target
+            var target = $(this).attr('href');
+           /* le sélecteur $(html, body) permet de corriger un bug sur chrome 
+           et safari (webkit) */
+            $('html, body')
+           // on arrête toutes les animations en cours 
+           .stop()
+           /* on fait maintenant l'animation vers le haut (scrollTop) vers 
+            notre ancre target */
+           .animate({scrollTop: $(target).offset().top}, 1000 );
+           return false;
+            });
+        } 
+      
 });

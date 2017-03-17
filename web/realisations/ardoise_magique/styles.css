@@ -1,0 +1,104 @@
+/*body et container*/
+body {
+	font-size: 12px;
+	text-align: center;
+	background: url(img/enfants.gif);
+	font-family: 'Pacifico', cursive;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/*header et footer*/
+h1 {
+	font-size: 4em;
+	margin: 20px;
+	padding: 30px;
+	display: inline-block;
+	/*background-color: #00FCEF;*/
+	border-radius: 15px;
+	background: #207cca; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #207cca 8%, #2eeaea 54%, #207cca 75%, #7db9e8 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #207cca 8%,#2eeaea 54%,#207cca 75%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #207cca 8%,#2eeaea 54%,#207cca 75%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+footer {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+/*canvas*/
+canvas {
+	border : 10px double #207cca;
+	background-color: #FFF;
+}
+div {
+	background-color: #FFF;
+	width: 250px;
+	padding: 10px;
+	margin: 0 auto;
+	border: 1px solid black;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-radius: 300px;
+}
+p {
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 2em;
+}
+footer p {
+	display: inline-block;
+	text-decoration: none;
+	background-color: #FFF;
+}
+
+section {
+	display: flex;
+	justify-content: space-around;
+}
+.gomme {
+	width: 50%;
+}
+.palette {
+	border: 1px solid black;
+	border-radius: 15px;
+	position: absolute;
+	top: 350px;
+	left: 150px;
+	display: none;
+}
+.palette:hover {
+	cursor: crosshair;
+}
+/*palette*/
+.noir {
+	background-color: black;
+}
+.rouge {
+	background-color: red;
+}
+.bleu {
+	background-color: navy;
+}
+.vert {
+	background-color: green;
+}
+.jaune {
+	background-color: yellow;
+}
+.orange {
+	background-color: orange;
+}
+.marron {
+	background-color: brown;
+}
+
+
+button {
+	padding: 10px;
+	border-radius: 15px;
+	text-align: center; 
+}

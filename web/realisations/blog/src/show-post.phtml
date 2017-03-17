@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blog-Layout</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chelsea+Market|Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<section class="main">
+	<div class="comment">
+		<article class="edit">
+			<h2><img src="img/badiane.gif" alt="icône" class="icone"><?= htmlspecialchars($resultList['Title']); ?></h2>
+				<p>Categorie: <span><?= htmlspecialchars($resultList['Name']); ?></span></p>
+
+				<p class="marge"><q><?= nl2br(htmlspecialchars($resultList['Content'])); ?></q></p>
+
+				<p class="space"><cite><?= htmlspecialchars($resultList['FirstName']).' '.htmlspecialchars($resultList['LastName']); ?></cite></p>
+		</article>
+
+		<article class="form_comment">
+			<form action="add-comment.php" method="post">
+	   		<input type="hidden" name="id" value="<?= intval($resultList['Id']) ?>">
+
+	   		<p><i class="fa fa-user" aria-hidden="true"></i>
+ </i><label for="nickname">Pseudo</label></p>
+			<p><input id="nickname" type="text" name="nickname" class="validate"></p>
+
+	        <p> <i class="fa fa-comment" aria-hidden="true"></i> <label for="icon_prefix2">Votre commentaire</label></p>
+	        <p> <textarea id="icon_prefix2" name="comment" class="materialize-textarea" cols="80" rows="5"></textarea>
+	          </p>
+	      <button>Enregistrer</button>
+	     
+	    	</form>
+		</article>
+	<article class="commentaire">
+	<h3>Vos Commentaires</h3>
+		<?php foreach($resultComment as $comment): ?>
+			<p><span><?= htmlspecialchars($comment['NickName']); ?></span><br>
+			<?= htmlspecialchars($comment['Content']); ?></p>
+		<?php endforeach; ?>
+	</article>
+</section>

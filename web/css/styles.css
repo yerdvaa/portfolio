@@ -78,7 +78,7 @@ h1{
 
 h2 {
     font-family: 'Fredericka the Great', cursive;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-align: center;
 }
 
@@ -123,27 +123,13 @@ footer section a, .fa {
 }
 
 /***********A PROPOS***********/
-#home, #intro {
+#home {
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 0 80px;
-}
-
-#intro {
-    margin: 15%;
-}
-
-#intro div h1{
-  font-size: 4rem;
-}
-
-
-#intro a {
-    font-size: 1.5rem;
-    font-family: 'Fredericka the Great', cursive;
 }
 
 #home article {
@@ -203,20 +189,60 @@ footer section a, .fa {
 .realisations {
     background: url(../img/realisations/code_fond.jpg);
     background-size: cover;
-    padding: 140px 60px 40px;
+    width: 60%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
 .realisations .animLego {
-    width: 600px;
-    height: 500px;
+    width: 400px;
+    height: 450px;
 }
 
 .realisations .animLego img {
-    width: 500px;
+    width: 400px;
     height: auto;
+    margin-top: 50px;
+}
+
+.projets {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+   
+}
+
+.projets article {
+    margin-top: 40px;
+}
+
+.projets article h3 {
+    padding: 10px;
+}
+
+.projets article img {
+    width: 350px;
+    height: 200px;
+    padding: 10px;
+    opacity: 1;
+}
+
+.projets article p, #realisations p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+#realisations p {
+    padding-top: 20px;
+}
+
+.projets article img:hover {
+    opacity: 0.6;
+    transition: opacity 0.25s ease-in-out;
+    box-shadow: 0 1px 6px 2px lightslategrey;
+    
 }
 
 /***********ARTICLES***********/
@@ -461,7 +487,6 @@ margin: 30px 20px 130px;
 @media screen and (max-width: 1280px)
 {
     /*Footer*/
-    /*Footer*/
     footer section {
         padding: 0;
         padding-top: 10px;
@@ -480,15 +505,16 @@ margin: 30px 20px 130px;
     
     /*réalisations*/
     .realisations {
-        padding-right: 90px;
+        padding-right: 0px;
     }
     
     .realisations .animLego {
-        width: 350px;
+        width: 250px;
+        height: 350px;
     }
     
     .realisations .animLego img {
-        width: 400px;
+        width: 250px;
     }
     
     /*articles*/   
@@ -515,7 +541,7 @@ margin: 30px 20px 130px;
     
     #articles div article img, #articlesSelect div article img {
         width: 300px;
-        heigth: auto;
+        height: auto;
         padding-top: 20px;
         padding-bottom: 10px;
     }
@@ -552,24 +578,45 @@ margin: 30px 20px 130px;
         width: 100%;
         font-size: 0.9rem;
     }
+    
+    header div {
+        padding: 0;
+    }
+    
     /*nav*/
     #menu-icon {
         display: inline-block;
     }
     
-    nav ul, nav:active ul { 
+    /*nav ul, nav:active ul { 
         display: none;
 	position: absolute;
 	padding: 20px;
 	background: #3C1236;
-	/*border: 5px solid #BA63C6;
-	right: 25%;*/
         left: 0;
 	top: 55px;
 	width: 100%;
 	border-radius: 4px 0 4px 4px;
     }
-
+    
+        nav:hover ul {
+	display: block;
+    }*/
+    
+    nav ul { 
+        display: none;
+	position: absolute;
+	padding: 20px;
+	background: #3C1236;
+        left: 0;
+	top: 55px;
+	width: 100%;
+    }
+    
+    .active {
+	display: block;
+    }
+    
     nav li {
         text-align: center;
 	width: 100%;
@@ -577,9 +624,7 @@ margin: 30px 20px 130px;
 	margin: 0;
     }
 
-    nav:hover ul {
-	display: block;
-    }
+
     
     nav a {
         padding-right: 10px;
@@ -588,26 +633,24 @@ margin: 30px 20px 130px;
     
     /*SVG*/
     .svgHaut {
-        padding: 110px 0 10px;
+        padding: 70px 0 10px;
     }
         
     /*Home*/
-    #home h1{
-        font-size: 3rem;
+    #home img {
+        width: 80px;
+        height: auto;
     }
-    
-    #home h1:nth-child(odd) {
-        padding: 40px;
-    }
-    #home h1:nth-child(even) {
-        padding: 50px;
-    }
-    
+        
     #home article {
-        padding: 10px 10px 10px;
+        padding: 10px 5px 10px;
         font-size: 1rem;
-        width: 95%;
+        width: 97%;
     }
+    
+    #home article p {
+    padding-bottom: 10px;
+}
     
     /*Compétences*/
     #competences img {
@@ -618,7 +661,17 @@ margin: 30px 20px 130px;
     
     /*Réalisations*/
     .realisations {
-        padding: 80px 50px 40px;
+        width: 90%;
+        padding-right: 0;
+    }
+    
+    .realisations .animLego {
+        width: 250px;
+    }
+    
+    .realisations .animLego img {
+        width: 250px;
+       
     }
     
     /*Articles*/

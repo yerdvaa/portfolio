@@ -29,11 +29,9 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0 0 80px;
+  margin: 15%;
 }
 
-#intro {
-    margin: 15%;
-}
 
 #intro div h1{
   font-size: 4rem;
@@ -50,4 +48,24 @@ body {
 
 #intro a:hover {
     color: #FFAB68;
+}
+
+
+/**********************************************/
+/**************  Media Queries  ***************/
+/**********************************************/
+
+@media screen and (max-width: 1280px)
+{
+    #intro {
+        margin: 10%;
+    }
+}
+
+@media screen and (max-width: 960px)
+{
+    #intro div h1{
+        font-size: 3rem;
+        padding: 30px;
+      }
 }

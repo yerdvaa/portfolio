@@ -1,0 +1,234 @@
+/*body et container*/
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	background-color: #F5F1E9;
+	color: #3D1414;
+}
+
+.container {
+	max-width: 1100px;
+	width: 80%;
+	margin: 0 auto;
+}
+* {
+	transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-ms-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+}
+.main {
+	background: url('../img/bord.jpg')no-repeat;
+	background-size: contain;
+	background-position: right;
+}
+
+/*Header*/
+header, footer {
+	background-color: #9D260B;
+	padding: 20px;
+}
+
+ul {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: space-around;
+
+
+}
+ul li {
+	list-style-type: none;
+	display: flex;
+}
+ul li a {
+	
+	text-decoration: none;
+	font-family: 'Chelsea Market', cursive;
+	color: #FFFFFF;
+	font-size: 2em;
+}
+
+nav {
+	margin-top: 10px;
+	
+}
+/*Titres*/
+h1 {
+	color: #3D1414;
+	font-weight: bold;
+	font-family: 'Chelsea Market', cursive;
+	font-size: 4em;
+	background: url('../img/epices1.jpg')no-repeat;
+	text-align: center;
+	padding-top: 2%;
+	padding-bottom:  14%;
+	background-size: contain;
+	background-position: center;
+}
+h2 {
+	font-size: 2em;
+	padding: 10px;
+	color: #9D260B;
+}
+
+a:hover {
+	font-weight: bold;
+}
+/*Accueil*/
+img {
+	width: 100%;
+}
+.accueil {
+
+	background:url('../img/epices.jpg')no-repeat;
+	background-size: cover;
+
+}
+.opacity {
+	background-color: rgba(255, 255, 255, 0.5);
+	padding-top: 50px;
+ 	padding-bottom: 50px;
+ 	display: flex;
+ 	justify-content: space-around;
+ 	align-items: center;
+}
+article {
+	padding: 30px;
+}
+.icone{
+	width: 30px;
+}
+p span {
+	text-decoration: underline;
+}
+.inline p cite {
+	float: right;
+	font-size: 10px; 
+}
+.inline .space {
+	padding-bottom: 40px;
+}
+.accueil article a {
+	background-color: #9D260B;
+	border-radius: 10px;
+	padding: 5px 10px 5px;
+	color: #FFF;
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+/*Form rédiger votre article*/
+p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+label {
+	font-weight: bold;
+}
+textarea {
+	border-radius: 5px;
+}
+button, .form_comment button {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+button:hover, .form_comment button:hover{
+	box-shadow: 3px 3px #9D260B;
+}
+/*table - liste des articles*/
+.list {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.list a{
+	text-decoration: none;
+	font-size: 2em;
+	color: #3D1414;
+	font-family: 'Chelsea Market', cursive;
+}
+.list a:hover {
+	font-weight: bold;
+	color: #9D260B;
+}
+.titleTab a, .accueil h2 {
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	color: #3D1414;
+}
+.titleTab a:hover, .accueil h2:hover {
+	font-weight: bold;
+	color: #9D260B;
+}
+table {
+	font-size: 14px;
+	border-collapse: collapse;
+	margin-right: 160px;
+	margin-top: 30px;
+}
+
+table tr td, table tr th  {
+	border: 1px solid #3D1414;
+	padding: 5px;
+}
+
+.add {
+	border-top: none;
+	border-bottom: none;
+	border-right: none;
+}
+
+/*Page show-post*/
+.edit .marge{
+	margin-left: 40px;
+	margin-right: 200px;
+}
+.edit .space {
+	margin-right: 300px;
+}
+.comment {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.form_comment {
+	margin: 0 auto;
+	width: 90%;
+}
+.commentaire span {
+	font-weight: bold;
+	padding-left: 10px;
+}
+h3 {
+	font-size: 1.5em;
+	color: #9D260B;
+}
+.commentaire p {
+	padding-left: 10px;
+}
+/*recettes*/
+.epices {
+	width: 150px;
+	margin: 0 auto;
+}
+.recette {
+	display: block;
+}
+.recettes li {
+	list-style-type: circle;
+}
+/*Footer*/
+footer section p {
+	font-family: 'Chelsea Market', cursive;
+	color: #FFFFFF;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+footer section a {
+	color: #FFFFFF;
+	font-size: 2em;
+	margin: 2px;
+}
+footer section a:hover {
+	color: #3D1414;
+}

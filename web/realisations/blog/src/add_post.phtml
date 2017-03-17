@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blog-Rédiger votre article</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chelsea+Market|Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+<section class="main">
+<h2>Rédiger votre article</h2>
+<form method="post" action="add_post.php">
+
+	<p><label for="title">Titre</label></p>
+		<input type="text" name="title" id="title">
+
+	<p><label for="content">Texte</label></p>
+		<textarea name="content" id="content" rows="20" cols="80"></textarea>
+
+	<p><label for="author">Auteur</label></p>
+		<select name="author" id="author">
+			<?php foreach($resultauthor as $author): ?>
+				<option value="<?= intval($author['Id']); ?>"><?= htmlspecialchars($author['FirstName']).' '.htmlspecialchars($author['LastName']); ?></option>
+			<?php endforeach; ?>
+		</select>
+	
+	<p><label for="category">Catégorie</label></p>
+		<select name="category" id="category">
+			<?php foreach($resultcategory as $category): ?>
+				<option value="<?= intval($category['Id']); ?>"><?= htmlspecialchars($category['Name']); ?></option>
+			<?php endforeach; ?>
+		</select>
+	
+	
+	<p><button>OK</button></p>
+</form>
+</section>

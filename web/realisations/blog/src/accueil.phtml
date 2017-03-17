@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blog-Rédiger votre article</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Chelsea+Market|Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<section class="accueil">
+<div class="opacity">
+
+	<?php foreach($resultList as $list): ?>
+		<article class="inline">
+			<h2><img src="img/badiane.gif" alt="icône" class="icone"> <?= htmlspecialchars($list['Title']); ?></h2>
+			<p>Categorie: <span><?= htmlspecialchars($list['Name']); ?></span></p>
+			<q><?= htmlspecialchars(substr($list['Content'], 0, 80)); ?></q>
+
+			<p class="space"><cite><?= htmlspecialchars($list['FirstName']).' '.htmlspecialchars($list['LastName']); ?></cite></p>
+			<a href="show-post.php?Id=<?= intval($list['Id']); ?>"><i class="fa fa-plus-circle" aria-hidden="true"></i> En savoir plus</a>
+		</article>
+	<?php endforeach; ?>
+</div>
+
+</section>

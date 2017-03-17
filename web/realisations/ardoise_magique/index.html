@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Ardoise Magique</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script
+			  src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>	
+	<script src="classes/Pen.class.js"></script>
+	<script src="classes/Program.class.js"></script>
+	<script src="classes/Slate.class.js"></script>
+	<script src="classes/Tampon.class.js"></script>
+	<script src="classes/ColorPalette.class.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Ardoise Magique</h1>
+	</header>
+	<main class="container">
+		<canvas id="canvas" width="800" height="500"></canvas>
+		<canvas class="palette" width="256" height="256"></canvas>
+		<section>
+		<div>
+			<p>Couleurs</p>
+				<button class="noir color" data-color="black"></button>
+				<button class="rouge color" data-color="red"></button>
+				<button class="bleu color" data-color="navy"></button>
+				<button class="vert color" data-color="green" ></button>
+				<button class="jaune color" data-color="yellow"></button>
+				<button class="orange color" data-color="orange"></button>
+				<button class="marron color" data-color="#A52A2A"></button> 
+			<p>Pointe du crayon</p>
+			<button class="fin size" data-size="10"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+			<button class="moyen size" data-size="20"><i class="fa fa-paint-brush" aria-hidden="true"></i></button>
+			<button class="large size" data-size="30"><i class="fa fa-circle" aria-hidden="true"></i></button>
+		</div>
+		<div>
+			<p>Palette<br> de couleur</p>
+			<button class="pipette"><i class="fa fa-eyedropper" aria-hidden="true"></i></button>
+		</div>
+		<div>
+			<p>Gomme</p>
+			<img src="img/gomme.jpeg" alt="gomme"  class="gomme">
+		</div>
+		</section>
+			
+
+	</main>
+	<footer>
+		<p>Nos beaux dessins <a href="https://www.google.fr/search?q=dessin+d%27enfants&client=ubuntu&hs=wBj&channel=fs&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwjv-5jfmNDQAhWDMhoKHbZ5BQkQsAQIHA&biw=1215&bih=929" target="_blank">ici</a></p>
+	</footer>
+	<script src="classes/main.js"></script>
+</body>
+</html>

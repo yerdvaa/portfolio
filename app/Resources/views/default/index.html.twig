@@ -50,13 +50,24 @@
             <div class="animLego">
                 <img src="" alt=""/>
             </div>
-        </article>     
+        </article>
+        <p>Découpage des images avec Photoshop et animation en Javascript.</p>
+            <div class="projets">
+                {% for realisation in realisations %}
+                    <article>
+                        <h3>{{ realisation.titre }}</h3>
+                        <a href="{{ asset("realisations/" ~ realisation.lien) }}"><img src="{{ asset("realisations/" ~ realisation.image ) }}" alt="Image du projet réalisé"></a>
+                        <p>{{ realisation.description |nl2br }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+            
         
 </section>
 
  <section id="articles" class="container">
     
-        <h2>Actus du code</h2>
+        <h2>Actus</h2>
             <article>
                 <p>Une sélection des articles que j'ai trouvé super intéressants sur le thème du code (ou pas!)</p>
                 <p>Vous avez une préférence sur le thème? Vous pouvez sélectionner celui qui vous plaît le plus.</p>

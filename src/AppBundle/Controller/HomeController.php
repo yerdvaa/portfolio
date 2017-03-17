@@ -58,9 +58,14 @@ class HomeController extends Controller
                     $this->addFlash('success', 'Votre email a bien été envoyé');
 
                     // Redirection vers la route contact
-                return $this->redirectToRoute('home', ['_fragment' => 'contacter']);
+                return $this->redirectToRoute('accueil', ['_fragment' => 'contacter']);
                 }
-            
+        
+        //Affichage des réalisations        
+                $em = $this->getDoctrine()->getManager();
+                $realisations = $em->getRepository("AppBundle:realisations")
+                        ->findAll();
+                
         //Sélection aléatoire des articles
                 $em = $this->getDoctrine()->getManager();
                 $articles = $em->getRepository("AppBundle:Articles")
@@ -77,7 +82,8 @@ class HomeController extends Controller
         return $this->render('default/index.html.twig', [
             "formContact" => $formContact->createView(),
             "articles" => $articles,
-            "catSelect" => $catSelect,            
+            "catSelect" => $catSelect,
+            "realisations" => $realisations,
             ]);
     }
     

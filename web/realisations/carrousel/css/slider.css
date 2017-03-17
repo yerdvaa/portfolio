@@ -1,0 +1,92 @@
+/*body et container*/
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 62.5%;
+	background: url(../images/concrete_seamless.png);
+}
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+/*titre et a*/
+h1 {
+	color: #015770;
+	font-size: 3rem;
+	margin: 30px;
+	text-align: center;
+}
+a {
+	margin: 30px;
+	color: #2A8782;
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #083689;
+}
+
+p {
+	margin-left: 60px;
+	color: #2A8782;
+	font-size: 0.7rem;
+}
+
+nav {
+	display: inline;
+}
+
+/*Boutons*/
+div {
+	display: block;
+	margin-right: 330px;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+.hidden {
+	display: none;
+}
+.notHidden {
+	display: inline-block;
+}
+/*figure*/
+main {
+	display: flex;
+	justify-content: center;
+}
+figure  {
+	padding: 40px;
+}
+#button {
+	float: right;
+	font-size: 1rem;
+}
+.clear {
+	clear: both;
+}
+figcaption {
+	text-align: center;
+	padding: 30px;
+	color: #2A8782;
+	font-size: 1.5rem;
+	font-weight: bold;
+	-webkit-transform:rotate(355deg); 
+    -moz-transform:rotate(355deg);
+    -o-transform:rotate(355deg); 
+    -ms-transform:rotate(355deg); 
+    transform:rotate(355deg);
+    text-shadow: 3px 3px 3px silver;
+}
+img {
+	padding: 20px;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px 5px silver;
+	width: 650px;
+	height: 450px;
+	-webkit-transform:rotate(355deg); 
+    -moz-transform:rotate(355deg);
+    -o-transform:rotate(355deg); 
+    -ms-transform:rotate(355deg); 
+    transform:rotate(355deg);
+}
