@@ -110,7 +110,7 @@ $(function ()
     // Nav pour smartphone
         if (window.matchMedia("(max-width: 960px)").matches)
         {
-            $('#menu-icon').on('click', function(){
+            $('.nav img').on('click', function(){
                 $('.nav ul').slideDown();
                 $(this).addClass('active');
             });

@@ -114,12 +114,33 @@ footer {
 footer section {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
   color: #FF49A3;
+  padding: 15px;
+}
+footer div {
+    
+    text-align: center;
 }
 
 footer section a, .fa {
     font-size: 1.8rem;
+}
+
+.mentions a {
+    font-size: 0.8rem;
+}
+
+.mentions p {
+    color: #FF49A3;
+    font-size: 0.8rem;
+}
+
+.mentions_styles {
+    padding-bottom: 120px;
+}
+
+.mentions_styles h3 {
+    padding: 20px;
 }
 
 /***********A PROPOS***********/
@@ -722,5 +743,9 @@ margin: 30px 20px 130px;
         border: 0 solid rgba(0,0,0,0);
         border-radius: 0;
         box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+    
+    .mentions_styles {
+        padding: 120px 20px 120px;
     }
 }
