@@ -41,7 +41,7 @@ function refreshAnimLego()
 {
     var imgAnim = document.querySelector('.animLego img');
     
-    imgAnim.src = '/Mon_Portfolio/web/' + img[statut.index].image;
+    imgAnim.src = '/web/' + img[statut.index].image;
 }
 
 function showImgLego()

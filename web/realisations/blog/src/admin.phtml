@@ -12,27 +12,28 @@
 </head>
 
 <section class="list main">
-	<a href="add_post.php"><i class="fa fa-pencil" aria-hidden="true"></i> Rédiger un article</a>
-<h2>Liste des articles</h2>
+	<div class="opacity">
+		<a href="add_post.php"><i class="fa fa-pencil" aria-hidden="true"></i> Rédiger un article</a>
+		<h2>Liste des articles</h2>
 
-	<table>
-			<tr>
-				<th>Date</th>
-				<th>Titre</th>
-				<th>Texte</th>
-				<th>Auteur</th>
-				<th>catégorie</th>
-			</tr>
-			<?php foreach($resultList as $list): ?>
-			<tr>
-				<td><?= htmlspecialchars(date_format(date_create($list['CreationTimestamp']), 'd-m-y')); ?></td>
-				<td class="titleTab"><a href="show-post.php?Id=<?= intval($list['Id']); ?>"><?= htmlspecialchars($list['Title']); ?></a></td>
-				<td><?= htmlspecialchars(substr($list['Content'], 0, 80)); ?></td>
-				<td><?= htmlspecialchars($list['FirstName']).' '.htmlspecialchars($list['LastName']); ?></td>
-				<td><?= htmlspecialchars($list['Name']); ?></td>
-				<td class="add"><a href="edit-post.php?Id=<?= intval($list['Id']); ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete-post.php?Id=<?= intval($list['Id']); ?>"><i class="fa fa-times" aria-hidden="true"></i></a></td>
-			</tr>
-			<?php endforeach; ?>
-	</table>
-
+		<table>
+				<tr>
+					<th>Date</th>
+					<th>Titre</th>
+					<th>Texte</th>
+					<th>Auteur</th>
+					<th>catégorie</th>
+				</tr>
+				<?php foreach($resultList as $list): ?>
+				<tr>
+					<td><?= htmlspecialchars(date_format(date_create($list['CreationTimestamp']), 'd-m-y')); ?></td>
+					<td class="titleTab"><a href="show-post.php?Id=<?= intval($list['Id']); ?>"><?= htmlspecialchars($list['Title']); ?></a></td>
+					<td><?= htmlspecialchars(substr($list['Content'], 0, 80)); ?></td>
+					<td><?= htmlspecialchars($list['FirstName']).' '.htmlspecialchars($list['LastName']); ?></td>
+					<td><?= htmlspecialchars($list['Name']); ?></td>
+					<td class="add"><a href="edit-post.php?Id=<?= intval($list['Id']); ?>"><i class="fa fa-pencil" aria-hidden="true"></i></a><a href="delete-post.php?Id=<?= intval($list['Id']); ?>"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+				</tr>
+				<?php endforeach; ?>
+		</table>
+	</div>
 </section>

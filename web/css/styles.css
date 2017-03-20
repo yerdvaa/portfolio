@@ -609,21 +609,6 @@ margin: 30px 20px 130px;
         display: inline-block;
     }
     
-    /*nav ul, nav:active ul { 
-        display: none;
-	position: absolute;
-	padding: 20px;
-	background: #3C1236;
-        left: 0;
-	top: 55px;
-	width: 100%;
-	border-radius: 4px 0 4px 4px;
-    }
-    
-        nav:hover ul {
-	display: block;
-    }*/
-    
     nav ul { 
         display: none;
 	position: absolute;
@@ -645,8 +630,6 @@ margin: 30px 20px 130px;
 	margin: 0;
     }
 
-
-    
     nav a {
         padding-right: 10px;
         padding-left: 10px;
@@ -732,11 +715,15 @@ margin: 30px 20px 130px;
     
     /*Contact*/
     #contact article {
-        width: 500px;
+        width: 330px;
     }
     
-    #contact article form div {
-        padding-right: 20px;
+    #contact h1 {
+        font-size: 2.5rem;
+    }
+        
+    .contact, .textarea {
+        width: 310px;
     }
     
     .form {
@@ -744,7 +731,7 @@ margin: 30px 20px 130px;
         border-radius: 0;
         box-shadow: 0 0 0 0 rgba(0,0,0,0);
     }
-    
+    /*Mentions légales*/
     .mentions_styles {
         padding: 120px 20px 120px;
     }

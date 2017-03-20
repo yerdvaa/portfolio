@@ -232,3 +232,36 @@ footer section a {
 footer section a:hover {
 	color: #3D1414;
 }
+
+@media screen and (max-width: 960px){ 
+	.container {
+		width: 89%;
+	}
+
+	ul li a {
+		font-size: 1.5em;
+	}
+
+	.opacity {
+		flex-direction: column;
+	}
+
+	.opacity article:hover {
+		opacity: 0.6;
+    	transition: opacity 0.25s ease-in-out;
+    	box-shadow: 0 1px 6px 2px lightslategrey;
+	}
+
+	table {
+		font-size: 10px;
+		margin: 0 auto;
+	}
+
+	table tr td, table tr th {
+		padding: 2px;
+	}
+
+	.titleTab a {
+		font-size: 12px;
+	}
+}
