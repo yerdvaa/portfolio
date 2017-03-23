@@ -33,7 +33,7 @@ class HomeController extends Controller
             if ($formContact->isSubmitted() && $formContact->isValid()) 
                 {
                     $data = $formContact->getData();
-                    //die(dump($formContact->getData()));
+                    
                     // Envoi du mail
                     $message = \Swift_Message::newInstance()
                         ->setSubject('Formulaire de contact')

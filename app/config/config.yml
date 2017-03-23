@@ -2,8 +2,6 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: mysql.yml }
-
 
    
 
@@ -11,7 +9,6 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-
 
 framework:
     #esi:             ~
@@ -74,3 +71,4 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
     port:      "%mailer_port%"
+    sender_address: "%mailer_admin%"

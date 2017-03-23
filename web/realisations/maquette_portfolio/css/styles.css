@@ -251,3 +251,72 @@ main section:nth-of-type(5) p {
 	margin-bottom: 20px;
 }
 
+/**********************************************/
+/**************  Media Queries  ***************/
+/**********************************************/
+@media screen and (max-width: 1280px)
+{
+	section {
+		padding: 10px;
+	}
+
+	.realisations p {
+		padding: 5px;
+	}
+}
+
+@media screen and (max-width: 960px)
+{
+	header a {
+		font-size: 1em;
+		text-align: center;
+		display: block;
+	}
+
+	nav {
+		float: none;
+	}
+
+	nav a {
+		margin-top: 0;
+		display: inline-block;
+	}
+
+	.background {
+		padding-top: 20px;
+		padding-bottom: 50px;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+
+	main section:nth-of-type(3) {
+		columns: auto;
+		-webkit-columns: auto;
+		-moz-columns: auto;
+	}
+
+	main section:nth-of-type(3) i.fa {
+		width: 70px;
+		height: 70px;
+		padding: 28px;
+	}
+
+	article img {
+		width: 100%;
+	}
+	article {
+		padding: 10px;
+	}
+
+	form input {
+		margin: 8px;
+		width: 90%;
+	}
+	textarea {
+		box-sizing: border-box;
+		width: 95%;
+		height: 100px;
+	}
+}

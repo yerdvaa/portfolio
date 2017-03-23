@@ -6,16 +6,17 @@
         <title>CreArtDev</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Je suis Audrey Serin, développeur intégrateur web en région parisienne. Je vous propose mes services afin de créer votre site internet.">
+        <meta property="og:url" content="http://www.creartdev.fr">
+        <meta property="og:description" content="Je suis Audrey Serin, développeur intégrateur web en région parisienne. Je vous propose mes services afin de créer votre site internet.">
+        <meta property="og:image" content="http://www.creartdev.fr/web/img/intro.jpg">
         <link rel="shorcut icon" type="image/svg" href="{{ asset("img/logo.svg") }}">
+
         
     {% block stylesheets %}
 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Scope+One" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset("/css/reset.css") }}">
-	<link href="{{ asset("css/animate.css") }}" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="{{ asset("css/styles.css") }}">
-	  <!-- Compiled and minified CSS 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">-->
     {% endblock %}   
     
 
@@ -40,27 +41,19 @@
 	</header>
 	<main>
             
-		<!-- <div class="svgHaut">
-			<svg width="100%" height="60"></svg>
-		</div> -->
-            
             {% block content %}{% endblock %}
             {% block articlesSelect %}{% endblock %}
             {% block mentions %}{% endblock %}
              
-		
-		<!-- <div class="svgBas">
-			<svg width="100%" height="60" class="svg1"></svg>
-		</div> -->
 	</main>
 	<footer>
 		<section class="container">
                     
-			<a href="{{ asset("https://www.linkedin.com/in/audrey-serin-0367bba2/") }}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-			<a href="{{ asset("file/CV Audrey SERIN.pdf") }}">CV</a>
+			<a href="{{ asset("https://www.linkedin.com/in/audrey-serin-0367bba2/") }}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+			<a href="{{ asset("file/CV Audrey SERIN.pdf") }}" target="_blank">CV</a>
 				
-			<a href="{{ asset("https://github.com/yerdvaa") }}"><i class="fa fa-github" aria-hidden="true"></i></a>
-			<a href="mailto:audrey.serin@creartdev.fr"<i class="fa fa-envelope" aria-hidden="true"></i> </a>
+			<a href="{{ asset("https://github.com/yerdvaa") }}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+			<a href="mailto:audrey.serin@creartdev.fr" target="_blank"<i class="fa fa-envelope" aria-hidden="true"></i> </a>
                 
                 </section>      
                 

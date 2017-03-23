@@ -184,8 +184,10 @@ footer h2 {
 }
 
 
-/*********Media Queries**********/
-@media screen and (max-width: 640px) {
+/*********Media Queries**********//**********************************************/
+/**************  Media Queries  ***************/
+/**********************************************/
+@media screen and (max-width: 960px) {
 	nav {
 		flex-direction: column;
 		align-items: center;
@@ -194,7 +196,7 @@ footer h2 {
 		display: none;
 	}
 	nav a {
-		padding: 10px;
+		padding: 3px;
 	}
 	/*image 1ere section*/
 	main section:first-child h2 {
@@ -220,15 +222,16 @@ footer h2 {
 	}
 	footer section a {
 		text-align: center;
-		padding: 15px;
+		padding: 5px;
 	}
 	footer section ul li {
-		padding: 15px;
+		padding: 5px;
 	}
 	footer section:nth-of-type(2) {
 		background-position: bottom;
 	}
 }
+
 @media screen and (max-width: 1024px) {
 	/*image 1ere section*/
 	
@@ -259,3 +262,4 @@ footer h2 {
 		background-position: bottom;
 	}
 }
+

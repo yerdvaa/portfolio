@@ -32,9 +32,6 @@ function actualize()
     masterPiece.draw('.svg1');
 }
 
-
-
-
 //fonction pour les réalisations avec les legos
 
 function refreshAnimLego()
@@ -111,13 +108,11 @@ $(function ()
         if (window.matchMedia("(max-width: 960px)").matches)
         {
             $('.nav img').on('click', function(){
-                $('.nav ul').slideDown();
-                $(this).addClass('active');
+                $('.nav ul').toggle();              
             });
 
             $('ul li').on('click', function(){
-                $('.nav ul').slideUp();
-                $(this).removeClass('active');
+                $('.nav ul').slideUp();  
             });
         }
     
@@ -143,7 +138,7 @@ $(function ()
      
     // Scroll à l'ancre lors de la navigation
     if (window.matchMedia("(min-width: 960px)").matches)
-        {
+        {           
             $('.nav a').on('click', function(evt){
            // bloquer le comportement par défaut: on ne rechargera pas la page
            evt.preventDefault(); 

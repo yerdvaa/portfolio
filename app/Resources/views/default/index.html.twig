@@ -15,7 +15,7 @@
                 
             <article class="anim">    
                 <p>Je suis Audrey.</p>
-                <p>Je suis passionnée par les nouvelles technologies. Suite à un tournant dans ma vie professionnelle, j'ai pu réalisé mes rêves et me tourner vers un métier créatif.</p> 
+                <p>Je suis passionnée par les nouvelles technologies. Suite à un tournant dans ma vie professionnelle, j'ai pu réaliser mes rêves et me tourner vers un métier créatif.</p> 
                 <p>J'ai donc suivi une formation intensive de 3 mois à la 3W Accademy pour devenir développeur web. Dans la foulée, j'ai continué avec une formation d'un mois sur Symfony 3 et une initiation d'une semaine à Photoshop.
                 </p>
                 <p>
@@ -34,12 +34,12 @@
     </div>
 </section>
         
-<section id ="competences" class="container">
-    
+<section id="competences" class="container">
+   <article> 
    <h2>Langages et Frameworks connus</h2>
    
         <img src ="{{ asset("img/competences.jpg") }}" alt="Mes compétences" />
-   
+   </article>
 </section>
 
 <section id="realisations" class="container">
@@ -56,7 +56,7 @@
                 {% for realisation in realisations %}
                     <article>
                         <h3>{{ realisation.titre }}</h3>
-                        <a href="{{ asset("realisations/" ~ realisation.lien) }}"><img src="{{ asset("realisations/" ~ realisation.image ) }}" alt="Image du projet réalisé"></a>
+                        <a href="{{ asset("realisations/" ~ realisation.lien) }}" target="_blank"><img src="{{ asset("realisations/" ~ realisation.image ) }}" alt="Image du projet réalisé"></a>
                         <p>{{ realisation.description |nl2br }}</p>
                     </article>
                 {% endfor %}

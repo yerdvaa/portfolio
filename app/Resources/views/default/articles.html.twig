@@ -21,7 +21,7 @@
             
             <h2>Vous avez sélectionné la catégorie : {{ categorieSelect.nom }}</h2>
             <div id="select" class="articles container">
-                    <a href="{{ path("accueil") }}" class="retour">Retour à l'Accueil</a>
+                    <a href="{{ path("accueil") }}#articles" class="retour">Retour aux Actus</a>
                 {% if articlesSelect is defined %}
                     {% for article in articlesSelect %}
                         

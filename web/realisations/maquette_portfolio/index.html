@@ -123,7 +123,35 @@
 				<script>
 		var canvasElement = document.querySelector("#canvas");
 		var context = canvasElement.getContext("2d");
-		/*Le triangle*/
+		
+
+		if (window.matchMedia("(max-width: 960px)").matches)
+        {
+        	/*Le triangle*/
+   		context.beginPath();
+		context.moveTo(50, 300);
+		context.lineTo(175, 50);
+		context.lineTo(300, 300);
+
+		context.closePath();
+
+		/*La bordure*/
+		
+		context.strokeStyle = '#7AA35F';
+		context.stroke();
+
+		/*<!--Le contenu*/
+		context.fillStyle = "#7AA35F";
+		context.fill();
+
+		context.font = "14px Serif";
+		context.fillText("HTML", 160, 35);
+		context.fillText("JS", 35, 320);
+		context.fillText("CSS", 290, 320);
+        }
+
+        else {
+        	/*Le triangle*/
    		context.beginPath();
 		context.moveTo(50, 450);
 		context.lineTo(250, 50);
@@ -144,6 +172,7 @@
 		context.fillText("HTML", 230, 35);
 		context.fillText("JS", 35, 475);
 		context.fillText("CSS", 455, 475);
+        }
 
 	</script>	
 				

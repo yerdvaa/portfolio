@@ -90,3 +90,41 @@ img {
     -ms-transform:rotate(355deg); 
     transform:rotate(355deg);
 }
+
+/**********************************************/
+/**************  Media Queries  ***************/
+/**********************************************/
+@media screen and (max-width: 960px){ 
+	h1 {
+		font-size: 2rem;
+	}
+
+	a {
+		text-align: center;
+	}
+
+	div {
+		margin: 0 auto;
+	}
+
+	figure {
+		margin: 0;
+		padding: 10px;
+	}
+
+	figcaption {
+		padding: 10px;
+		font-size: 1rem;
+	}
+
+	#button {
+		padding-right: 25%;
+		padding-bottom: 5%;
+	}
+
+	img {
+		width: 290px;
+		height: auto;
+		padding: 10px;
+	}
+}

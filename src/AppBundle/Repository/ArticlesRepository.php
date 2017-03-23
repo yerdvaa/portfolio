@@ -47,7 +47,6 @@ class ArticlesRepository extends \Doctrine\ORM\EntityRepository
                 ->setParameters(['selection' => $select])
                 ->getQuery();
         
-        //die(dump($query->getResult()));
         return $query->getResult();
     }
 }

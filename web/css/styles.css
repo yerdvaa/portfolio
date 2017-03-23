@@ -194,13 +194,17 @@ footer section a, .fa {
 
 
 /***********COMPETENCES***********/
+#competences {
+    padding: 60px 0;
+}
+
 .competences {
     padding-bottom: 80px;
 }
 
 /***********REALISATIONS***********/
 #realisations {
-    padding: 50px 0;
+    padding: 60px 0;
 }
 
 #realisations h2 {
@@ -268,7 +272,7 @@ footer section a, .fa {
 
 /***********ARTICLES***********/
 #articles, .articles {
- padding-top: 50px;   
+ padding-top: 60px;   
 }
 #articles, #articlesSelect {
     font-family: 'Scope One', serif;
@@ -715,15 +719,20 @@ margin: 30px 20px 130px;
     
     /*Contact*/
     #contact article {
-        width: 330px;
+        width: 95%;
     }
     
     #contact h1 {
         font-size: 2.5rem;
     }
         
+    .contact {
+        height: 45px;
+    }
+    
     .contact, .textarea {
-        width: 310px;
+        width: 340px;
+        font-size: 1rem;
     }
     
     .form {
@@ -731,6 +740,14 @@ margin: 30px 20px 130px;
         border-radius: 0;
         box-shadow: 0 0 0 0 rgba(0,0,0,0);
     }
+    .name, .mail, .textarea {
+        padding-left: 25px;
+    }
+    
+    .contacter p {
+        font-size: 1rem;
+    }
+    
     /*Mentions légales*/
     .mentions_styles {
         padding: 120px 20px 120px;

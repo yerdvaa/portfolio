@@ -1,7 +1,7 @@
 <?php
 
 // connexion à la base de données
-	$dsn = 'mysql:host=localhost;dbname=blog';
+	$dsn = 'mysql:host=127.0.0.1;dbname=creartdev';
 	$user = 'root';
 	$pwd = 'Poupette11!';
 
