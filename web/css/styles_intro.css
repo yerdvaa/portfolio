@@ -32,7 +32,6 @@ body {
   margin: 15%;
 }
 
-
 #intro div h1{
   font-size: 4rem;
   padding: 50px;
@@ -69,6 +68,11 @@ body {
         padding: 20px;
       }
     #intro a {
-    font-size: 1.1rem;
+        font-size: 1.1rem;
+    }
+    
+    img {
+        width: 85%;
+        height: auto;
     }
 }
